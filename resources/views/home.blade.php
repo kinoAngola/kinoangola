@@ -154,8 +154,11 @@
                                             <p class="ml-1"> - Luanda, Camama</p>
                                         </div>
                                     </div>
-                                    <div class="first">
-                                        <p class="text-orange-600 font-semibold text-l justify-self-end">2.000,00 Kz</p>
+                                    <div class="second">
+                                        <div class="spans">
+                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
+                                        </div>
                                         <div class="avaliacoes">
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
@@ -164,15 +167,12 @@
                                             <i class='bx bxs-star'></i>
                                         </div>
                                     </div>
-                                    <div class="second">
-                                        <div class="spans">
-                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
-                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
-                                        </div>
+                                    <div class="first1">
                                     </div>
                                 </div>
                                 <div class="cta">
                                     <a href="#" class="btn-principal">Comprar</a>
+                                    <p class="text-orange-600 font-semibold text-xl justify-self-end p-1 border rounded-md border-orange-600">2.000,00 Kz</p>
                                 </div>
                             </div>
                         </div>

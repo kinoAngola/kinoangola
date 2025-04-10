@@ -186,20 +186,9 @@ h2 {
     @include FlexBox(space-between, stretch, column);
 
     .part-above {
-        .first {
-            @apply flex flex-row justify-between items-center;
-
-            .avaliacoes {
-                @apply text-yellow-500 flex flex-row items-center;
-
-                i {
-                    @apply transition-all duration-500 cursor-pointer hover:-translate-y-1/4;
-                }
-            }
-        }
 
         h3 {
-            @apply text-xl font-semibold text-gray-800 mt-7;
+            @apply text-xl font-semibold text-gray-800;
             margin-left: 0.3rem;
         }
 
@@ -211,46 +200,59 @@ h2 {
                 @apply flex flex-row;
             }
         }
-    }
-
-    .second {
-        @include FlexBox (start, center, row);
-        @apply mt-2;
-
-        .spans {
-            @apply -mt-2;
-
-            span {
-                font-size: .6rem;
-                font-weight: .7rem;
-                border-radius: $radius-second;
-                padding: .3rem .45rem;
-            }
-
-            .pop {
-                color: rgb(126, 0, 126);
-                background-color: rgb(255, 228, 255);
-                @apply transition-all duration-500 cursor-pointer;
-
-                &:hover {
-                    color: rgb(255, 228, 255);
-                    background-color: rgb(126, 0, 126);
-
+        .second {
+            @include FlexBox (start, center, row);
+            @apply mt-2;
+    
+            .spans {
+                @apply -mt-2;
+    
+                span {
+                    font-size: .6rem;
+                    font-weight: .7rem;
+                    border-radius: $radius-second;
+                    padding: .3rem .45rem;
+                }
+    
+                .pop {
+                    color: rgb(126, 0, 126);
+                    background-color: rgb(255, 228, 255);
+                    @apply transition-all duration-500 cursor-pointer;
+    
+                    &:hover {
+                        color: rgb(255, 228, 255);
+                        background-color: rgb(126, 0, 126);
+    
+                    }
+                }
+    
+                .freeshipping {
+                    color: $color-green-dark;
+                    background-color: $color-green-light;
+                    @apply transition-all duration-500 cursor-pointer;
+    
+                    &:hover {
+                        color: $color-green-light;
+                        background-color: $color-green-dark;
+                    }
                 }
             }
+            
+            .avaliacoes {
+                @apply text-yellow-500 flex flex-row items-center;
 
-            .freeshipping {
-                color: $color-green-dark;
-                background-color: $color-green-light;
-                @apply transition-all duration-500 cursor-pointer;
-
-                &:hover {
-                    color: $color-green-light;
-                    background-color: $color-green-dark;
+                i {
+                    @apply transition-all duration-500 cursor-pointer hover:-translate-y-1/4;
                 }
             }
         }
+
+        .first {
+            @apply flex flex-row justify-between items-center mt-10;
+
+        }
     }
+
 
     .cta {
         @apply flex flex-col items-stretch;
