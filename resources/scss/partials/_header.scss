@@ -1,0 +1,183 @@
+/*======================================== CABEÇALHO ======================================== */
+
+header {
+    position: sticky;
+    @include FlexBox (space-around, center, row);
+    background-color: $color-white;
+    padding: 1rem;
+    box-shadow: $box-shadow;
+    position: sticky;
+    top: 0;
+    z-index: $z-indez-2;
+
+    .mobile-menu {
+        display: none;
+    }
+
+    /* LOGO */
+    .logo-link {
+        @include FlexBox (center, center, row);
+        text-transform: uppercase;
+        font-size: $size-x-large;
+        text-decoration: none;
+        color: $color-black;
+        font-weight: $weight-semibold;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        .nav-list {
+            @include FlexBox (space-between, center, row);
+            gap: 1rem;
+
+            .nav-link {
+                color: $color-black;
+                @apply hover:text-orange-600;
+            }
+        }
+    }
+
+    /* EXTRAS */
+    .extras {
+        @include FlexBox (center, center, row);
+
+        .link-extra {
+            @include FlexBox (center, center, row);
+            color: $color-black;
+            transition: $transicao;
+
+            i {
+                font-size: 1.35rem;
+                font-weight: $weight-medium;
+                margin-inline: .4rem;
+                border-radius: $radius-around;
+                @include ColorTransition($color-red);
+                transition: $transicao;
+
+                &:hover {
+                    @apply text-orange-600;
+                }
+            }
+
+            span{
+                @apply p-1 bg-red-600 text-white rounded-full absolute text-center;
+                font-weight: $weight-semibold;
+                font-size: .6rem;
+                margin-left: 1.2rem;
+                margin-top: -1.2rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                line-height: 1.2rem;
+                @include FlexBox (center, center, row);
+            }
+        }
+
+        .link-login {
+            margin-left: 3rem;
+            color: $color-white;
+            @extend .btn-p-2;
+        }
+    }
+
+}
+
+
+@media (max-width: 1000px) {
+    header {
+        width: 100vw;
+        position: relative;
+        @include FlexBox(space-between, center, row);
+
+        .mobile-menu {
+            display: block;
+            cursor: pointer;
+            scale: .8;
+            z-index: $z-indez-1;
+        }
+
+        .mobile-menu div {
+            width: 32px;
+            height: 4px;
+            margin: 8px;
+            background-color: $color-black;
+            transition: $transicao;
+        }
+
+        .navbar {
+            position: absolute;
+            z-index: $z-indez-4;
+            width: 100vw;
+            height: 100vh;
+            background-color: $color-white;
+            padding: 4rem 1rem 1rem;
+            top: 0;
+            right: 0;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in;
+
+            .nav-list {
+            margin-top: 2px;
+                @include FlexBox (center, stretch, column);
+                gap: .5rem;
+                width: 100%;
+
+                .nav-item {
+
+                    @include FlexBox (center, stretch, column);
+                    text-align: center;
+
+                    .nav-link {
+                        padding: 2rem 0rem;
+                        font-weight: $weight-semibold;
+                        font-size: $size-large;
+                        transition: $transicao;
+
+                        &:hover {
+                            background-color: $color-gray-light;
+                            @apply text-orange-600;
+                        }
+                    }
+                }
+            }
+        }
+
+        .navbar.active {
+            transform: translateX(0);
+        }
+
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .mobile-menu.active .line1 {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu.active .line2 {
+            opacity: 0;
+        }
+
+        .mobile-menu.active .line3 {
+            transform: rotate(-45deg) translate(8px, -9px);
+        }
+
+        .extras {
+            .link-extra{
+                font-size: 3rem;
+            }
+
+            .link-login{
+                margin-left: 1rem;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,2466 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* =========================================== Variáveis de Controlo =========================================== */
+
+:root {
+ /*    --color-gray-light: #E5E7EB;
+    --color-gray-base: #9CA3AF;
+    --color-gray-darkness-1: #1F2937;
+    --color-gray-dark: #374151;
+    --color-gray-darkness-2: #111827;
+    --color-black: #030712;
+
+
+    --color-indigo-lighten: #7770ff;
+    --color-indigo-light: #665eff;
+    --color-indigo: #4F46E5;
+    --color-indigo-hover: #312abb;
+
+    --color-btn-white: #f2f2f2;
+    --color-btn-white-hover: #fff;
+
+ */
+    /*======================================== FONT FAMILY ======================================== */
+    --family-body: "Inter", serif;
+    --family-title: "Poppins", serif;
+
+    /*======================================== FONT WEIGHT ======================================== */
+    --weight-extralight: 200;
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+    --weight-black: 800;
+
+    /*======================================== FONT SIZE ======================================== */
+    --size-base: 1rem;
+    /* 16px */
+    --size-small: .875rem;
+    --size-smallito: .813rem;
+    /* 14px */
+    --size-smaller: .938rem;
+    /* 15px */
+    --size-large: 1.25rem;
+    /* 20px */
+    --size-x-large: 1.5rem;
+    /* 24px */
+    --size-big: 1.75rem;
+    /* 28px */
+    --size-biggest: 2rem;
+    /* 32px */
+    --size-super-biggest: 3rem;
+    /* 32px */
+
+    /*======================================== BOX SHADOW ======================================== */
+    --shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --shadow-2: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    --shadow-3: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    /*======================================== RADIUS BORDER ======================================== */
+    --radius-first: 5px;
+    --radius-second: 10px;
+    --radius-third: 30px;
+    --radius-around: 50%;
+
+    /*======================================== Z-INDEX ======================================== */
+    --z-indez-1: 99;
+    --z-indez-2: 88;
+    --z-indez-3: 77;
+    --z-indez-4: 66;
+    --z-indez-5: 55;
+
+    /*======================================== COLORES ======================================== */
+    /* GRAY */
+    --color-gray-light: #F4F2F2;
+    --color-gray-blue: #F8F9FA;
+    --color-gray-base: #D9D9D9;
+    --color-gray-base-2: #D1CFCF;
+    --color-gray-dark: #B8B8B8;
+    --color-gray-darkness: #858585;
+    --color-gray-darkness-2: #6C757D;
+
+    /* WHITE */
+    --color-white: #FFFFFF;
+    --color-white-background: #f8f8f8;
+    --color-white-2: #edf2f7;
+    --color-white-3: #f2f2f2;
+
+    /* BLACK */
+    --color-black: #2a2a2a;
+    --color-black-2: #353535;
+    --color-black-3: #464646;
+
+    /* BLACK FOOTER */
+    --color-footer-dark: #696969;
+    --color-footer-black-light: #909294;
+
+    /* PRINCIPAIS */
+    --color-red: #D90404;
+    --color-red-alt: #EE7061;
+    --color-red-light: #d55c5c;
+    --color-red-black: #c70000;
+    --color-beige-light: #F9E8CC;
+    --color-beige-lighten: #faf1e2;
+    --color-beige-base: #DEBB3B;
+    --color-beige-darkness: #DEBB3B;
+
+    /* OTHERS */
+    --color-green: #00D27A;
+    --color-green-light: #D9F8EB;
+    --color-blue-light: #d9e8f8;
+    --color-blue-lighten: #eef6ff;
+    --color-blue-dark: #003789;
+    --color-green-dark: #00894F;
+    --color-orange: #F5803E;
+    --color-orange-dark: #AC5A2B;
+    --color-orange-light: #FDE6D8;
+    --color-yellow: #E8B209;
+
+
+    /* KINO CORES EXTRAÍDAS DO LOGO */
+    --kino-color-yellow-dark: #caa933;
+    --kino-color-yellow-dark: #DEBB3B;
+    --kino-color-red: #F20505;
+    --kino-color-red-dark: #b00000;
+    --kino-color-white: #F2F2F2;
+    --kino-color-white-light: #FAFAFA;
+    --kino-color-black: #303030;
+    --kino-color-black-dark: #212529;
+    --kino-color-gray: #909294;
+    --kino-color-orange: #ff7b00;
+    ;
+    --kino-color-orange-hover: #e06b00;
+
+
+    --transicao: .4s;
+}
+
+
+
+/*======================================== TAGS PRINCIPAIS ======================================== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Inter", serif;
+    font-size: 16px;
+    background-color: #f8f8f8;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: 0.4s;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  h1,
+  h2 {
+    font-family: "Poppins", serif;
+    font-weight: var(--weight-bold);
+  }
+  
+  /*======================================== CLASSES PRINCIPAIS ======================================== */
+  .btn-p-1 {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #DEBB3B;
+    border-radius: 5px;
+    color: #FFFFFF;
+    transition: 0.4s;
+  }
+  .btn-p-1:hover {
+    opacity: 0.65;
+  }
+  
+  .btn-p-2, .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, header .extras .link-login {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #D90404;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .btn-p-2:hover, .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, header .extras .link-login:hover {
+    scale: 1.03;
+    background-color: #c70000;
+  }
+  
+  .btn-p-3 {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    color: #D90404;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .btn-p-3:hover {
+    scale: 1.02;
+  }
+  
+  .btn-c, .HeroSwiper .hero-slide-2 .content .cta .cta-botao-2 {
+    padding: 0.5rem 1rem;
+    outline: 1px solid #858585;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #858585;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .btn-c:hover, .HeroSwiper .hero-slide-2 .content .cta .cta-botao-2:hover {
+    color: #FFFFFF;
+    background-color: #858585;
+  }
+  
+  .btn-s {
+    padding: 0.5rem 1rem;
+    border: 1px solid #D90404;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #D90404;
+    transition: 0.4s;
+  }
+  .btn-s:hover {
+    color: #FFFFFF;
+    background-color: #D90404;
+  }
+  
+  .container, .descontos-especiais, .locais, .filtersearch, .food, .services, .destaque {
+    padding: 6rem 12rem;
+  }
+  .container h2, .descontos-especiais h2, .locais h2, .filtersearch h2, .food h2, .services h2, .destaque h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #353535;
+    margin-bottom: 3rem;
+  }
+  
+  .informacoes-cards-horizontal, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .informacoes-cards-horizontal .acima, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+  .informacoes-cards-horizontal .acima .spans, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans {
+    margin-bottom: 0.5rem;
+  }
+  .informacoes-cards-horizontal .acima .spans span, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans span {
+    font-size: 0.6rem;
+    font-weight: 0.6rem;
+    border-radius: 10px;
+    padding: 0.3rem 0.45rem;
+  }
+  .informacoes-cards-horizontal .acima .spans .pop, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .pop {
+    color: rgb(126, 0, 126);
+    background-color: rgb(255, 228, 255);
+  }
+  .informacoes-cards-horizontal .acima .spans .freeshipping, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .freeshipping {
+    color: #00894F;
+    background-color: #D9F8EB;
+  }
+  .informacoes-cards-horizontal .acima .cta, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.35rem;
+  }
+  .informacoes-cards-horizontal .acima .cta .btn-p-2, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2, .informacoes-cards-horizontal .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .informacoes-cards-horizontal .acima .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1, .filtersearch .HeroSwiper .hero-slide-2 .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1, .informacoes-cards-horizontal .acima .cta header .extras .link-login, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login, header .extras .informacoes-cards-horizontal .acima .cta .link-login, header .extras .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos header .extras .info .acima .cta .link-login,
+  .informacoes-cards-horizontal .acima .cta i,
+  .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i {
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  .informacoes-cards-horizontal .acima .cta .btn-p-2, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2, .informacoes-cards-horizontal .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .informacoes-cards-horizontal .acima .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1, .filtersearch .HeroSwiper .hero-slide-2 .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1, .informacoes-cards-horizontal .acima .cta header .extras .link-login, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login, header .extras .informacoes-cards-horizontal .acima .cta .link-login, header .extras .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos header .extras .info .acima .cta .link-login {
+    font-size: 0.875rem;
+  }
+  .informacoes-cards-horizontal .acima .cta .btn-p-2:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2:hover, .informacoes-cards-horizontal .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .content .informacoes-cards-horizontal .acima .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1:hover, .filtersearch .HeroSwiper .hero-slide-2 .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1:hover, .informacoes-cards-horizontal .acima .cta header .extras .link-login:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login:hover, header .extras .informacoes-cards-horizontal .acima .cta .link-login:hover, header .extras .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos header .extras .info .acima .cta .link-login:hover {
+    scale: 1.02;
+  }
+  .informacoes-cards-horizontal .acima .cta i, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #D9F8EB;
+    color: #00894F;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  .informacoes-cards-horizontal .acima .cta i:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i:hover {
+    background-color: #00894F;
+    color: #D9F8EB;
+  }
+  .informacoes-cards-horizontal h3, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info h3 {
+    color: #353535;
+    font-size: 1.25rem;
+    margin-left: 0.4rem;
+  }
+  .informacoes-cards-horizontal .description, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  .informacoes-cards-horizontal .description p, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description p {
+    opacity: 0.7;
+    font-weight: 300;
+    font-size: 0.813rem;
+  }
+  .informacoes-cards-horizontal .description .sep, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description .sep {
+    width: 5px;
+    height: 1px;
+    margin-top: 0.2rem;
+    border-radius: 50%;
+    background-color: #464646;
+  }
+  .informacoes-cards-horizontal .extras, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+  }
+  .informacoes-cards-horizontal .extras .avaliacoes, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 1.3rem;
+    margin-left: 0.4rem;
+    gap: 0;
+    align-self: flex-start;
+  }
+  .informacoes-cards-horizontal .extras .avaliacoes i, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes i {
+    color: #E8B209;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .informacoes-cards-horizontal .extras .avaliacoes i:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes i:hover {
+    transform: translateY(-1px);
+  }
+  .informacoes-cards-horizontal .extras .price, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .price {
+    align-self: flex-end;
+    font-weight: 700;
+    font-size: 0.938rem;
+    color: #464646;
+  }
+  
+  .informacoes-cards-vertical, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .informacoes-cards-vertical .acima, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+  .informacoes-cards-vertical .acima .spans, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans {
+    margin-bottom: 0.3rem;
+  }
+  .informacoes-cards-vertical .acima .spans span, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans span {
+    font-size: 0.65rem;
+    font-weight: 0.7rem;
+    border-radius: 10px;
+    padding: 0.3rem 0.45rem;
+  }
+  .informacoes-cards-vertical .acima .spans .pop, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .pop {
+    color: rgb(126, 0, 126);
+    background-color: rgb(255, 228, 255);
+  }
+  .informacoes-cards-vertical .acima .spans .freeshipping, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .freeshipping {
+    color: #00894F;
+    background-color: #D9F8EB;
+  }
+  .informacoes-cards-vertical .acima .cta, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.1rem;
+    margin-right: 0;
+  }
+  .informacoes-cards-vertical .acima .cta .btn-p-2, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2, .informacoes-cards-vertical .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .informacoes-cards-vertical .acima .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .HeroSwiper .hero-slide-2 .content .info .acima .cta .cta-botao-1, .informacoes-cards-vertical .acima .cta header .extras .link-login, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login, header .extras .informacoes-cards-vertical .acima .cta .link-login, header .extras .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos header .extras .info .acima .cta .link-login,
+  .informacoes-cards-vertical .acima .cta i,
+  .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i {
+    scale: 0.8;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  .informacoes-cards-vertical .acima .cta .btn-p-2, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2, .informacoes-cards-vertical .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .informacoes-cards-vertical .acima .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .HeroSwiper .hero-slide-2 .content .info .acima .cta .cta-botao-1, .informacoes-cards-vertical .acima .cta header .extras .link-login, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login, header .extras .informacoes-cards-vertical .acima .cta .link-login, header .extras .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos header .extras .info .acima .cta .link-login {
+    font-weight: 600;
+    margin-right: 0;
+  }
+  .informacoes-cards-vertical .acima .cta .btn-p-2:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2:hover, .informacoes-cards-vertical .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .content .informacoes-cards-vertical .acima .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .content .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .HeroSwiper .hero-slide-2 .content .info .acima .cta .cta-botao-1:hover, .informacoes-cards-vertical .acima .cta header .extras .link-login:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login:hover, header .extras .informacoes-cards-vertical .acima .cta .link-login:hover, header .extras .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos header .extras .info .acima .cta .link-login:hover {
+    scale: 0.93;
+  }
+  .informacoes-cards-vertical .acima .cta i, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #D9F8EB;
+    color: #00894F;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  .informacoes-cards-vertical .acima .cta i:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i:hover {
+    background-color: #00894F;
+    color: #D9F8EB;
+  }
+  .informacoes-cards-vertical h3, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info h3 {
+    color: #353535;
+    font-size: 1.25rem;
+    margin-left: 0.4rem;
+    margin-top: 0.5rem;
+  }
+  .informacoes-cards-vertical .description, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  .informacoes-cards-vertical .description p, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description p {
+    opacity: 0.7;
+    font-weight: 300;
+    font-size: 0.813rem;
+  }
+  .informacoes-cards-vertical .description .sep, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description .sep {
+    width: 5px;
+    height: 1px;
+    margin-top: 0.2rem;
+    border-radius: 50%;
+    background-color: #464646;
+  }
+  .informacoes-cards-vertical .extras, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 3rem;
+  }
+  .informacoes-cards-vertical .extras .avaliacoes, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 0.7rem;
+    margin-left: 0.4rem;
+    gap: 0;
+    align-self: flex-start;
+  }
+  .informacoes-cards-vertical .extras .avaliacoes i, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes i {
+    color: #E8B209;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .informacoes-cards-vertical .extras .avaliacoes i:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes i:hover {
+    transform: translateY(-1px);
+  }
+  .informacoes-cards-vertical .extras .price, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .price {
+    align-self: flex-end;
+    font-weight: 700;
+    font-size: 0.938rem;
+    color: #464646;
+  }
+  
+  /*======================================== PRINCIPAIS ANIMAÇÕES ======================================== */
+  /*======================================== CABEÇALHO ======================================== */
+  header {
+    position: sticky;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 88;
+    /* LOGO */
+    /* NAVBAR */
+    /* EXTRAS */
+  }
+  header .mobile-menu {
+    display: none;
+  }
+  header .logo-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #2a2a2a;
+    font-weight: 600;
+  }
+  header .navbar {
+    width: 500px;
+  }
+  header .navbar .nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  header .navbar .nav-list .nav-link {
+    color: #2a2a2a;
+    transition: 0.4s;
+  }
+  header .navbar .nav-list .nav-link:hover {
+    color: #D90404;
+  }
+  header .extras {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  header .extras .link-extra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #2a2a2a;
+    transition: 0.4s;
+  }
+  header .extras .link-extra:hover i {
+    transform: translateY(-2px);
+  }
+  header .extras .link-extra i {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-inline: 0.4rem;
+    border-radius: 50%;
+    transition: 0.4s;
+    transition: 0.4s;
+  }
+  header .extras .link-extra i:hover {
+    color: #D90404;
+  }
+  header .extras .link-login {
+    margin-left: 3rem;
+    color: #FFFFFF;
+  }
+  
+  @media (max-width: 1200px) {
+    header {
+      width: 100vw;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+    header .mobile-menu {
+      display: block;
+      cursor: pointer;
+      scale: 0.8;
+      z-index: 99;
+    }
+    header .mobile-menu div {
+      width: 32px;
+      height: 4px;
+      margin: 8px;
+      background-color: #2a2a2a;
+      transition: 0.4s;
+    }
+    header .navbar {
+      position: absolute;
+      z-index: 66;
+      width: 100vw;
+      height: 100vh;
+      background-color: #FFFFFF;
+      padding: 1rem;
+      top: 0;
+      right: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in;
+    }
+    header .navbar .nav-list {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+    }
+    header .navbar .nav-list .nav-item {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: column;
+      text-align: center;
+    }
+    header .navbar .nav-list .nav-item .nav-link {
+      padding: 2rem 0rem;
+      font-weight: 600;
+      font-size: 1.25rem;
+      transition: 0.4s;
+    }
+    header .navbar .nav-list .nav-item .nav-link:hover {
+      background-color: #F4F2F2;
+    }
+    header .navbar.active {
+      transform: translateX(0);
+    }
+    @keyframes navLinkFade {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    header .mobile-menu.active .line1 {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+    header .mobile-menu.active .line2 {
+      opacity: 0;
+    }
+    header .mobile-menu.active .line3 {
+      transform: rotate(-45deg) translate(8px, -9px);
+    }
+    header .extras .link-extra i {
+      font-size: 1.5rem;
+    }
+    header .extras .link-login {
+      margin-left: 1rem;
+    }
+  }
+  /*======================================== HERO - BANNER EM CARROSSEL ======================================== */
+  .HeroSwiper {
+    width: 100vw;
+    height: 500px;
+    background-color: #FFFFFF;
+  }
+  .HeroSwiper .hero-slide-1 {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+  }
+  .HeroSwiper .hero-slide-1 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: 1;
+  }
+  .HeroSwiper .hero-slide-1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  .HeroSwiper .hero-slide-1 .content {
+    position: relative;
+    z-index: 3;
+  }
+  .HeroSwiper .hero-slide-1::before {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .HeroSwiper .hero-slide-1 img {
+    filter: blur(3px);
+  }
+  .HeroSwiper .hero-slide-1 .content {
+    text-align: center;
+    margin: auto;
+    padding: 1.5rem;
+    width: 800px;
+  }
+  .HeroSwiper .hero-slide-1 .content h1 {
+    color: #FFFFFF;
+    font-size: 3rem;
+  }
+  .HeroSwiper .hero-slide-1 .content p {
+    margin-top: 1rem;
+    padding-inline: 3rem;
+    color: #B8B8B8;
+  }
+
+/*   
+  .HeroSwiper .hero-slide-1 .content form {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    transition: 0.4s;
+    margin-top: 2rem;
+    margin-inline: auto;
+    width: 500px;
+    border-radius: 5px;
+  }
+  .HeroSwiper .hero-slide-1 .content form:hover {
+    outline: 2px solid #D90404;
+  }
+  .HeroSwiper .hero-slide-1 .content form button {
+    background-color: #f8f8f8;
+    padding: 0.7rem 1rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  .HeroSwiper .hero-slide-1 .content form button i {
+    font-weight: 600;
+    color: #D90404;
+  }
+  .HeroSwiper .hero-slide-1 .content form input {
+    flex-grow: 1;
+    background-color: white;
+    padding: 0.7rem 1rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+  }
+ */
+
+  .HeroSwiper .hero-slide-2 {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    padding: 5rem;
+  }
+  .HeroSwiper .hero-slide-2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: 1;
+  }
+  .HeroSwiper .hero-slide-2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  .HeroSwiper .hero-slide-2 .content {
+    position: relative;
+    z-index: 3;
+  }
+  .HeroSwiper .hero-slide-2::before {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .HeroSwiper .hero-slide-2 .content {
+    padding: 3rem 3rem 3rem 0;
+  }
+  .HeroSwiper .hero-slide-2 .content .paragrafito {
+    color: #DEBB3B;
+    font-size: 0.875rem;
+  }
+  .HeroSwiper .hero-slide-2 .content h2 {
+    color: #FFFFFF;
+    font-size: 3rem;
+  }
+  .HeroSwiper .hero-slide-2 .content .desc {
+    font-size: 1rem;
+    color: #B8B8B8;
+    opacity: 0.9;
+  }
+  .HeroSwiper .hero-slide-2 .content .cta {
+    margin-top: 4rem;
+  }
+  .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1,
+  .HeroSwiper .hero-slide-2 .content .cta .cta-botao-2 {
+    font-size: 0.938rem;
+    font-weight: 500;
+  }
+  .HeroSwiper .hero-slide-2 .content .cta .cta-botao-2 {
+    margin-left: 0.3rem;
+  }
+  .HeroSwiper .hero-slide-3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem;
+  }
+  .HeroSwiper .hero-slide-3 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: 1;
+  }
+  .HeroSwiper .hero-slide-3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  .HeroSwiper .hero-slide-3 .content {
+    position: relative;
+    z-index: 3;
+  }
+  .HeroSwiper .hero-slide-3::before {
+    background-color: rgba(0, 0, 0, 0.226);
+  }
+  .HeroSwiper .hero-slide-3 img {
+    filter: blur(2px);
+  }
+  .HeroSwiper .hero-slide-3 .content {
+    width: 800px;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .HeroSwiper .hero-slide-3 .content h1 {
+    color: #FFFFFF;
+    font-size: 3rem;
+  }
+  .HeroSwiper .hero-slide-3 .content p {
+    color: #B8B8B8;
+  }
+  .HeroSwiper .hero-slide-3 .content .btn-p-2, .HeroSwiper .hero-slide-3 .content header .extras .link-login, header .extras .HeroSwiper .hero-slide-3 .content .link-login, .HeroSwiper .hero-slide-3 .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .hero-slide-3 .content .cta .cta-botao-1 {
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+  .HeroSwiper .swiper-pagination-bullet,
+  .HeroSwiper .swiper-pagination-bullet-active {
+    background-color: #d55c5c;
+  }
+  
+  /*======================================== DESTAQUE DA SEMANA ======================================== */
+  .destaque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #FFFFFF;
+  }
+  .destaque .content {
+    display: grid;
+    grid-template-columns: repeat(2, 450px);
+    gap: 0;
+  }
+  .destaque .content .desc {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+  }
+  .destaque .content .desc h3 {
+    font-family: var(--family-body);
+    font-weight: var(--weight-bold);
+    font-size: 3rem;
+    color: #2a2a2a;
+  }
+  .destaque .content .desc p {
+    color: var(--color-black-3);
+    font-weight: 200;
+    margin-top: 0.5rem;
+  }
+  .destaque .content .desc p a {
+    font-weight: var(--weight-bold);
+    color: var(--color-orange);
+    transition: 0.4s;
+  }
+  .destaque .content .desc p a:hover {
+    text-decoration: underline;
+  }
+  .destaque .content .desc .botoes {
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+  .destaque .content .desc .botoes .btn-c, .destaque .HeroSwiper .hero-slide-2 .content .desc .botoes .cta .cta-botao-2, .HeroSwiper .hero-slide-2 .destaque .content .desc .botoes .cta .cta-botao-2, .destaque .HeroSwiper .hero-slide-2 .content .cta .desc .botoes .cta-botao-2, .HeroSwiper .hero-slide-2 .destaque .content .cta .desc .botoes .cta-botao-2 {
+    margin-left: 0.5rem;
+  }
+  
+  /*======================================== SERVIÇOS ======================================== */
+  .services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f2f2f2;
+  }
+  .services h2 {
+    text-transform: none;
+    margin: 0 0 1rem;
+    color: #464646;
+  }
+  .services .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    place-items: center;
+    margin: auto;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .services .content .service-card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 5px;
+    padding: 1.5rem;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .services .content .service-card i {
+    font-size: 4rem;
+    color: #D90404;
+  }
+  .services .content .service-card h3 {
+    color: #464646;
+    font-size: 1rem;
+  }
+  .services .content .service-card p {
+    color: #858585;
+    font-weight: 300;
+    font-size: 0.813rem;
+  }
+  
+  /*======================================== FOOD ======================================== */
+  .food {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFFFFF;
+  }
+  .food .FoodSwiper {
+    width: 100%;
+    height: 100%;
+    padding-block: 4rem;
+  }
+  .food .FoodSwiper .swiper-wrapper .swiper-slide {
+    padding-inline: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 10px;
+  }
+  .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info {
+    padding: 0.7rem;
+    background-color: #FFFFFF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .food .FoodSwiper .swiper-botoes {
+    position: absolute;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 1rem;
+    top: 0%;
+    left: -4%;
+    z-index: 3;
+  }
+  .food .FoodSwiper .swiper-button-prev,
+  .food .FoodSwiper .swiper-button-next {
+    scale: 0.4;
+    font-weight: 800;
+    color: #B8B8B8;
+    background-color: #FFFFFF;
+    padding: 3rem;
+    border-radius: 50%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    transition: 0.4s;
+  }
+  .food .FoodSwiper .swiper-button-prev:hover,
+  .food .FoodSwiper .swiper-button-next:hover {
+    background-color: #f8f8f8;
+    scale: 0.4;
+  }
+  
+  /*======================================== PESQUISA FILTRADA & MAP ======================================== */
+  .filtersearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #FFFFFF;
+    gap: 1rem;
+  }
+  .filtersearch h2 {
+    width: 100%;
+    flex: 100%;
+    margin: auto;
+    font-size: 1.5rem;
+    text-transform: none;
+    color: #003789;
+    padding: 1.5rem;
+    background-color: #d9e8f8;
+    border-radius: 10px;
+  }
+  .filtersearch .search-map {
+    min-width: 400px;
+    flex: 1;
+    height: 400px;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  .filtersearch .content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    flex: 1;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  .filtersearch .content .tools {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    border-radius: 5px;
+  }
+  .filtersearch .content .tools input,
+  .filtersearch .content .tools button {
+    border: none;
+    font-size: 1.25rem;
+    background-color: #FFFFFF;
+  }
+  .filtersearch .content .tools .btn-lupa {
+    padding: 0.8rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .filtersearch .content .tools .btn-input-text {
+    padding: 0.8rem;
+    flex: 65%;
+    font-size: 1rem;
+  }
+  .filtersearch .content .tools .btn-close {
+    padding: 0.4rem;
+    cursor: pointer;
+    color: #d55c5c;
+  }
+  .filtersearch .content .tools .btn-close i {
+    border-radius: 10px;
+    padding: 0.4rem;
+    transition: 0.4s;
+  }
+  .filtersearch .content .tools .btn-close i:hover {
+    background-color: #f8f8f8;
+    color: #D90404;
+  }
+  .filtersearch .content .tools .btn-filtro {
+    color: #353535;
+    padding: 0.3rem;
+    padding-right: 0.8rem;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .filtersearch .content .tools .btn-filtro i {
+    font-size: 0.875rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    transition: 0.4s;
+  }
+  .filtersearch .content .tools .btn-filtro i:hover {
+    background-color: #FAFAFA;
+    color: #858585;
+  }
+  .filtersearch .content .tools:hover .resultados {
+    display: block;
+  }
+  .filtersearch .content .tools .resultados {
+    display: none;
+    position: absolute;
+    flex-grow: 1;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    width: 100%;
+    top: 110%;
+    left: 0;
+    border-radius: 10px;
+    transition: 0.4s;
+    z-index: 3;
+  }
+  .filtersearch .content .tools .resultados h3 {
+    color: #B8B8B8;
+    font-size: 1rem;
+  }
+  .filtersearch .content .tools .resultados .resultado {
+    display: none;
+    width: 100%;
+    padding: 2rem;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+  }
+  .filtersearch .content .PesquisaSwiper {
+    position: relative;
+    padding: 1rem;
+    max-width: 600px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5.5rem;
+    z-index: 2;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-botoes {
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    position: absolute;
+    top: 3%;
+    right: -5%;
+    z-index: 3;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-button-prev,
+  .filtersearch .content .PesquisaSwiper .swiper-button-next {
+    scale: 0.37;
+    font-weight: 800;
+    color: #B8B8B8;
+    background-color: #FFFFFF;
+    padding: 3rem;
+    border-radius: 50%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    transition: 0.4s;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-button-prev:hover,
+  .filtersearch .content .PesquisaSwiper .swiper-button-next:hover {
+    background-color: #F4F2F2;
+    color: #D90404;
+    scale: 0.4;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-wrapper {
+    padding: 0 2rem 0 0;
+    margin-top: 3.5rem;
+    background-color: #f8f8f8;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide {
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    gap: 1rem;
+    background-color: #f8f8f8;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos img {
+    width: 120px;
+    border-radius: 10px;
+    transition: 0.4s;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos img:hover {
+    scale: 1.02;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-pagination-bullet,
+  .filtersearch .content .PesquisaSwiper .swiper-pagination-bullet-active {
+    background-color: #d55c5c;
+    font-size: 0.813rem;
+    padding: 0.5rem;
+  }
+  .filtersearch .content .PesquisaSwiper .swiper-pagination-bullet p,
+  .filtersearch .content .PesquisaSwiper .swiper-pagination-bullet-active p {
+    margin-top: -8px;
+    margin-left: -3px;
+    color: white;
+  }
+  
+  /*======================================== LOCAIS DE LAZER ======================================== */
+  .locais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #faf1e2;
+  }
+  .locais .content {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    place-items: center;
+    gap: 2rem;
+    margin: 1rem 0 4rem;
+  }
+  .locais .content .link-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    transition: 0.4s;
+  }
+  .locais .content .link-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.064);
+    z-index: 2;
+  }
+  .locais .content .link-card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: 1;
+    transition: 0.4s;
+  }
+  .locais .content .link-card h3 {
+    position: absolute;
+    transform: translateY(100px);
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    color: #FFFFFF;
+    transition: 0.4s;
+  }
+  .locais .content .link-card h3:hover {
+    text-decoration: underline;
+  }
+  .locais .content .link-card:hover {
+    scale: 1.03;
+  }
+  .locais .content .link-card:hover h3 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+  .locais .content .link-card:hover img {
+    filter: blur(1px);
+  }
+  .locais .content .btn-p-2, .locais .content header .extras .link-login, header .extras .locais .content .link-login, .locais .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .locais .content .cta .cta-botao-1 {
+    font-weight: 600;
+  }
+  .locais .content .btn-p-2:hover, .locais .content header .extras .link-login:hover, header .extras .locais .content .link-login:hover, .locais .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .locais .content .cta .cta-botao-1:hover {
+    outline: 2px solid #D90404;
+    background-color: #FFFFFF;
+    color: #D90404;
+  }
+  
+  /*======================================== DESCONTOS ESPECIAIS ======================================== */
+  .descontos-especiais {
+    position: relative;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+  }
+  .descontos-especiais::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/food (4).jpg") no-repeat top/cover;
+    background-color: rgba(0, 0, 0, 0.442);
+    background-blend-mode: darken;
+    z-index: 1;
+    filter: blur(1px);
+  }
+  .descontos-especiais .content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+    padding: 2rem;
+    gap: 1rem;
+    text-align: center;
+    z-index: 2;
+  }
+  .descontos-especiais .content h3 {
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 1.75rem;
+  }
+  .descontos-especiais .content p {
+    font-weight: 500;
+    color: #B8B8B8;
+  }
+  .descontos-especiais .content .btn-p-2, .descontos-especiais .content header .extras .link-login, header .extras .descontos-especiais .content .link-login, .descontos-especiais .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .descontos-especiais .content .cta .cta-botao-1 {
+    font-size: 0.938rem;
+  }
+  
+  /*======================================== CADASTRO ======================================== */
+  .cadastro-locais {
+    padding: 6rem 12rem;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .cadastro-locais .content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+  }
+  .cadastro-locais .content h2 {
+    color: #2a2a2a;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .cadastro-locais .content p {
+    font-size: 1rem;
+    color: #464646;
+    font-weight: 300;
+  }
+  .cadastro-locais form {
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    flex-direction: column;
+    width: 400px;
+    background-color: #F8F9FA;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 10px;
+    padding: 2rem;
+    border: solid 1px #F4F2F2;
+  }
+  .cadastro-locais form h3 {
+    color: #353535;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .cadastro-locais form hr {
+    margin-bottom: 1rem;
+    background-color: #F4F2F2;
+  }
+  .cadastro-locais form input {
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: solid 1px #F4F2F2;
+    width: 100%;
+  }
+  .cadastro-locais form .btn-p-2, .cadastro-locais form header .extras .link-login, header .extras .cadastro-locais form .link-login, .cadastro-locais form .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .cta .cadastro-locais form .cta-botao-1 {
+    font-weight: 600;
+  }
+  .cadastro-locais form .btn-p-2:hover, .cadastro-locais form header .extras .link-login:hover, header .extras .cadastro-locais form .link-login:hover, .cadastro-locais form .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .content .cta .cadastro-locais form .cta-botao-1:hover {
+    scale: 1.01;
+  }
+  .cadastro-locais form .lembrar {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    align-self: flex-start;
+    padding: 0;
+  }
+  .cadastro-locais form .lembrar input {
+    margin: 0;
+    width: 30px;
+  }
+  .cadastro-locais form .lembrar label {
+    font-size: 0.875rem;
+  }
+  .cadastro-locais form a {
+    margin-top: 2rem;
+    align-self: center;
+    color: #003789;
+    font-size: 0.875rem;
+    opacity: 0.6;
+    transition: 0.4s;
+  }
+  .cadastro-locais form a:hover {
+    text-decoration: underline;
+    opacity: 0.7;
+  }
+  
+  /*======================================== EMPRESAS ======================================== */
+  .EmpresasSwiper {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 6rem;
+    background-color: #edf2f7;
+  }
+  .EmpresasSwiper h2 {
+    text-align: center;
+    align-self: center;
+    margin-top: 4rem;
+    color: #353535;
+    text-transform: uppercase;
+  }
+  .EmpresasSwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    padding-block: 6rem;
+  }
+  .EmpresasSwiper .swiper-slide a img {
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 2rem;
+    margin-bottom: 0.5rem;
+    background-color: #FFFFFF;
+  }
+  .EmpresasSwiper .swiper-slide h3 {
+    font-size: 1.25rem;
+  }
+  .EmpresasSwiper .swiper-slide .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .EmpresasSwiper .swiper-slide .info p {
+    font-size: 0.813rem;
+    font-weight: 300;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #212529;
+    padding: 4rem 4rem 2rem;
+  }
+  footer .content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  footer .content .sessao .title {
+    padding-top: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+  footer .content .sessao .desc {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  footer .content .sessao .desc a {
+    color: #909294;
+    font-size: 0.938rem;
+    opacity: 0.8;
+  }
+  footer .content .sessao .desc a:hover {
+    opacity: 1;
+  }
+  footer .newslatter h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+  footer .newslatter .desc {
+    gap: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    flex-direction: column;
+  }
+  footer .newslatter .desc p {
+    font-size: 0.875rem;
+    color: #909294;
+  }
+  footer .newslatter .desc input {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: none;
+  }
+  footer .separador {
+    height: 1px;
+    width: 100%;
+    background-color: #696969;
+    opacity: 0.5;
+  }
+  footer .copy {
+    color: #909294;
+    font-size: 0.813rem;
+    opacity: 0.75;
+  }
+  
+  /*======================================== FONT FAMILY ======================================== */
+  /*======================================== FONT WEIGHT ======================================== */
+  /*======================================== FONT SIZE ======================================== */
+  /* 16px */
+  /* 14px */
+  /* 15px */
+  /* 20px */
+  /* 24px */
+  /* 28px */
+  /* 32px */
+  /* 32px */
+  /*======================================== BOX SHADOW ======================================== */
+  /*======================================== RADIUS BORDER ======================================== */
+  /*======================================== Z-INDEX ======================================== */
+  /*======================================== COLORES ======================================== */
+  /* GRAY */
+  /* WHITE */
+  /* BLACK */
+  /* BLACK FOOTER */
+  /* PRINCIPAIS */
+  /* OTHERS */
+  /* KINO CORES EXTRAÍDAS DO LOGO */
+  /*======================================== TAGS PRINCIPAIS ======================================== */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Inter", serif;
+    font-size: 16px;
+    background-color: #f8f8f8;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: 0.4s;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  h1,
+  h2 {
+    font-family: "Poppins", serif;
+  }
+  
+  /*======================================== CLASSES PRINCIPAIS ======================================== */
+  .btn-p-1 {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #DEBB3B;
+    border-radius: 5px;
+    color: #FFFFFF;
+    transition: 0.4s;
+  }
+  .btn-p-1:hover {
+    opacity: 0.65;
+  }
+  
+  .btn-p-2, header .extras .link-login, .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1 {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #D90404;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .btn-p-2:hover, header .extras .link-login:hover, .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover {
+    scale: 1.03;
+    background-color: #c70000;
+  }
+  
+  .btn-p-3 {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    color: #D90404;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .btn-p-3:hover {
+    scale: 1.02;
+  }
+  
+  .btn-c, .HeroSwiper .hero-slide-2 .content .cta .cta-botao-2 {
+    padding: 0.5rem 1rem;
+    outline: 1px solid #858585;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #858585;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .btn-c:hover, .HeroSwiper .hero-slide-2 .content .cta .cta-botao-2:hover {
+    color: #FFFFFF;
+    background-color: #858585;
+  }
+  
+  .btn-s {
+    padding: 0.5rem 1rem;
+    border: 1px solid #D90404;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #D90404;
+    transition: 0.4s;
+  }
+  .btn-s:hover {
+    color: #FFFFFF;
+    background-color: #D90404;
+  }
+  
+  .container, .destaque, .services, .food, .filtersearch, .locais, .descontos-especiais {
+    padding: 6rem 12rem;
+  }
+  .container h2, .destaque h2, .services h2, .food h2, .filtersearch h2, .locais h2, .descontos-especiais h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #353535;
+    margin-bottom: 3rem;
+  }
+  
+  .informacoes-cards-horizontal, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .informacoes-cards-horizontal .acima, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+  .informacoes-cards-horizontal .acima .spans, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans {
+    margin-bottom: 0.5rem;
+  }
+  .informacoes-cards-horizontal .acima .spans span, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans span {
+    font-size: 0.6rem;
+    font-weight: 0.6rem;
+    border-radius: 10px;
+    padding: 0.3rem 0.45rem;
+  }
+  .informacoes-cards-horizontal .acima .spans .pop, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .pop {
+    color: rgb(126, 0, 126);
+    background-color: rgb(255, 228, 255);
+  }
+  .informacoes-cards-horizontal .acima .spans .freeshipping, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .freeshipping {
+    color: #00894F;
+    background-color: #D9F8EB;
+  }
+  .informacoes-cards-horizontal .acima .cta, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.35rem;
+  }
+  .informacoes-cards-horizontal .acima .cta .btn-p-2, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2, .informacoes-cards-horizontal .acima .cta header .extras .link-login, header .extras .informacoes-cards-horizontal .acima .cta .link-login, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login, header .extras .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login, .informacoes-cards-horizontal .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .informacoes-cards-horizontal .acima .cta .cta-botao-1, .filtersearch .HeroSwiper .hero-slide-2 .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1,
+  .informacoes-cards-horizontal .acima .cta i,
+  .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i {
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  .informacoes-cards-horizontal .acima .cta .btn-p-2, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2, .informacoes-cards-horizontal .acima .cta header .extras .link-login, header .extras .informacoes-cards-horizontal .acima .cta .link-login, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login, header .extras .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login, .informacoes-cards-horizontal .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .informacoes-cards-horizontal .acima .cta .cta-botao-1, .filtersearch .HeroSwiper .hero-slide-2 .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1 {
+    font-size: 0.875rem;
+  }
+  .informacoes-cards-horizontal .acima .cta .btn-p-2:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2:hover, .informacoes-cards-horizontal .acima .cta header .extras .link-login:hover, header .extras .informacoes-cards-horizontal .acima .cta .link-login:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login:hover, header .extras .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login:hover, .informacoes-cards-horizontal .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .content .informacoes-cards-horizontal .acima .cta .cta-botao-1:hover, .filtersearch .HeroSwiper .hero-slide-2 .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1:hover {
+    scale: 1.02;
+  }
+  .informacoes-cards-horizontal .acima .cta i, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #D9F8EB;
+    color: #00894F;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  .informacoes-cards-horizontal .acima .cta i:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i:hover {
+    background-color: #00894F;
+    color: #D9F8EB;
+  }
+  .informacoes-cards-horizontal h3, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info h3 {
+    color: #353535;
+    font-size: 1.25rem;
+    margin-left: 0.4rem;
+  }
+  .informacoes-cards-horizontal .description, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  .informacoes-cards-horizontal .description p, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description p {
+    opacity: 0.7;
+    font-weight: 300;
+    font-size: 0.813rem;
+  }
+  .informacoes-cards-horizontal .description .sep, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description .sep {
+    width: 5px;
+    height: 1px;
+    margin-top: 0.2rem;
+    border-radius: 50%;
+    background-color: #464646;
+  }
+  .informacoes-cards-horizontal .extras, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+  }
+  .informacoes-cards-horizontal .extras .avaliacoes, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 1.3rem;
+    margin-left: 0.4rem;
+    gap: 0;
+    align-self: flex-start;
+  }
+  .informacoes-cards-horizontal .extras .avaliacoes i, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes i {
+    color: #E8B209;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .informacoes-cards-horizontal .extras .avaliacoes i:hover, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes i:hover {
+    transform: translateY(-1px);
+  }
+  .informacoes-cards-horizontal .extras .price, .filtersearch .content .PesquisaSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .price {
+    align-self: flex-end;
+    font-weight: 700;
+    font-size: 0.938rem;
+    color: #464646;
+  }
+  
+  .informacoes-cards-vertical, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .informacoes-cards-vertical .acima, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+  .informacoes-cards-vertical .acima .spans, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans {
+    margin-bottom: 0.3rem;
+  }
+  .informacoes-cards-vertical .acima .spans span, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans span {
+    font-size: 0.65rem;
+    font-weight: 0.7rem;
+    border-radius: 10px;
+    padding: 0.3rem 0.45rem;
+  }
+  .informacoes-cards-vertical .acima .spans .pop, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .pop {
+    color: rgb(126, 0, 126);
+    background-color: rgb(255, 228, 255);
+  }
+  .informacoes-cards-vertical .acima .spans .freeshipping, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .freeshipping {
+    color: #00894F;
+    background-color: #D9F8EB;
+  }
+  .informacoes-cards-vertical .acima .cta, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.1rem;
+    margin-right: 0;
+  }
+  .informacoes-cards-vertical .acima .cta .btn-p-2, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2, .informacoes-cards-vertical .acima .cta header .extras .link-login, header .extras .informacoes-cards-vertical .acima .cta .link-login, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login, header .extras .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login, .informacoes-cards-vertical .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .informacoes-cards-vertical .acima .cta .cta-botao-1, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1,
+  .informacoes-cards-vertical .acima .cta i,
+  .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i {
+    scale: 0.8;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  .informacoes-cards-vertical .acima .cta .btn-p-2, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2, .informacoes-cards-vertical .acima .cta header .extras .link-login, header .extras .informacoes-cards-vertical .acima .cta .link-login, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login, header .extras .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login, .informacoes-cards-vertical .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .informacoes-cards-vertical .acima .cta .cta-botao-1, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1, .HeroSwiper .hero-slide-2 .content .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1 {
+    font-weight: 600;
+    margin-right: 0;
+  }
+  .informacoes-cards-vertical .acima .cta .btn-p-2:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .btn-p-2:hover, .informacoes-cards-vertical .acima .cta header .extras .link-login:hover, header .extras .informacoes-cards-vertical .acima .cta .link-login:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta header .extras .link-login:hover, header .extras .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .link-login:hover, .informacoes-cards-vertical .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .content .informacoes-cards-vertical .acima .cta .cta-botao-1:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .HeroSwiper .hero-slide-2 .content .cta .cta-botao-1:hover, .HeroSwiper .hero-slide-2 .content .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta .cta-botao-1:hover {
+    scale: 0.93;
+  }
+  .informacoes-cards-vertical .acima .cta i, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #D9F8EB;
+    color: #00894F;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  .informacoes-cards-vertical .acima .cta i:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .acima .cta i:hover {
+    background-color: #00894F;
+    color: #D9F8EB;
+  }
+  .informacoes-cards-vertical h3, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info h3 {
+    color: #353535;
+    font-size: 1.25rem;
+    margin-left: 0.4rem;
+    margin-top: 0.5rem;
+  }
+  .informacoes-cards-vertical .description, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  .informacoes-cards-vertical .description p, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description p {
+    opacity: 0.7;
+    font-weight: 300;
+    font-size: 0.813rem;
+  }
+  .informacoes-cards-vertical .description .sep, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .description .sep {
+    width: 5px;
+    height: 1px;
+    margin-top: 0.2rem;
+    border-radius: 50%;
+    background-color: #464646;
+  }
+  .informacoes-cards-vertical .extras, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 3rem;
+  }
+  .informacoes-cards-vertical .extras .avaliacoes, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-top: 0.7rem;
+    margin-left: 0.4rem;
+    gap: 0;
+    align-self: flex-start;
+  }
+  .informacoes-cards-vertical .extras .avaliacoes i, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes i {
+    color: #E8B209;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .informacoes-cards-vertical .extras .avaliacoes i:hover, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .avaliacoes i:hover {
+    transform: translateY(-1px);
+  }
+  .informacoes-cards-vertical .extras .price, .food .FoodSwiper .swiper-wrapper .swiper-slide .card-pratos .info .extras .price {
+    align-self: flex-end;
+    font-weight: 700;
+    font-size: 0.938rem;
+    color: #464646;
+  }
+  
+  /*======================================== PRINCIPAIS ANIMAÇÕES ======================================== */
+  @media (max-width: 1300px) {
+    .services,
+    .locais,
+    .food {
+      padding: 2rem 3rem;
+    }
+    .cadastro-locais {
+      padding: 2rem 6rem;
+    }
+  }
+  @media (max-width: 1150px) {
+    .services {
+      margin: 0;
+    }
+    .services .content {
+      padding: 0;
+    }
+    /* LOCAIS */
+    .locais .content {
+      display: grid;
+      grid-template-columns: repeat(2, 250px);
+    }
+    .locais .content .link-card img {
+      width: 100%;
+    }
+    .food .FoodSwiper .swiper-wrapper .swiper-slide {
+      height: 480px;
+      overflow-y: hidden;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 992px) {
+    header {
+      width: 100%;
+    }
+    header .mobile-menu {
+      scale: 0.6;
+    }
+    header .logo-link {
+      display: none;
+    }
+    header .navbar .nav-list {
+      margin-top: 3rem;
+    }
+    header .extras .link-extra i {
+      font-size: 1.25rem;
+    }
+    header .extras .link-extra .link-login {
+      font-size: 1rem;
+    }
+    .container, .destaque, .services, .food, .filtersearch, .locais, .descontos-especiais {
+      padding: 2rem 4rem;
+    }
+    .container h2, .destaque h2, .services h2, .food h2, .filtersearch h2, .locais h2, .descontos-especiais h2 {
+      font-size: 1.75rem;
+      margin: 2rem auto 1rem;
+      text-align: center;
+    }
+    /*======================================== INDEX ======================================== */
+    /* HERO */
+    .HeroSwiper .hero-slide-1 .content {
+      width: 650px;
+    }
+    .HeroSwiper .hero-slide-2 .content {
+      padding: 0;
+    }
+    .HeroSwiper .hero-slide-2 .content .cta {
+      margin-top: 2.5rem;
+    }
+    .HeroSwiper .hero-slide-3 .content {
+      width: 650PX;
+    }
+    /* DESTAQUE */
+    .destaque .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      place-items: center;
+    }
+    .destaque .content img {
+      width: 100%;
+    }
+    .destaque .content .desc p {
+      font-size: 0.938rem;
+    }
+    .destaque .content .desc .botoes {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      margin-top: 1.5rem;
+      gap: 0.6rem;
+    }
+    .destaque .content .desc .botoes .btn-c, .destaque .HeroSwiper .hero-slide-2 .content .desc .botoes .cta .cta-botao-2, .HeroSwiper .hero-slide-2 .destaque .content .desc .botoes .cta .cta-botao-2, .destaque .HeroSwiper .hero-slide-2 .content .cta .desc .botoes .cta-botao-2, .HeroSwiper .hero-slide-2 .destaque .content .cta .desc .botoes .cta-botao-2,
+    .destaque .content .desc .botoes .btn-p-2,
+    .destaque .content .desc .botoes header .extras .link-login,
+    header .extras .destaque .content .desc .botoes .link-login,
+    .destaque .HeroSwiper .hero-slide-2 .content .desc .botoes .cta .cta-botao-1,
+    .HeroSwiper .hero-slide-2 .destaque .content .desc .botoes .cta .cta-botao-1,
+    .destaque .HeroSwiper .hero-slide-2 .content .cta .desc .botoes .cta-botao-1,
+    .HeroSwiper .hero-slide-2 .destaque .content .cta .desc .botoes .cta-botao-1 {
+      font-size: 0.813rem;
+    }
+    .destaque .content .desc .botoes .btn-c, .destaque .HeroSwiper .hero-slide-2 .content .desc .botoes .cta .cta-botao-2, .HeroSwiper .hero-slide-2 .destaque .content .desc .botoes .cta .cta-botao-2, .destaque .HeroSwiper .hero-slide-2 .content .cta .desc .botoes .cta-botao-2, .HeroSwiper .hero-slide-2 .destaque .content .cta .desc .botoes .cta-botao-2 {
+      margin-left: 0;
+    }
+    /* SERVIÇOS */
+    .services {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .services .content {
+      padding: 0.5rem;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .services .content .service-card {
+      width: 400px;
+    }
+    /* FOOD */
+    .food .FoodSwiper .swiper-wrapper .swiper-slide {
+      padding-bottom: 1rem;
+      overflow-x: hidden;
+      display: grid;
+      grid-template-columns: repeat(4, 250px);
+    }
+    .cadastro-locais {
+      text-align: center;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .cadastro-locais .content {
+      width: 70%;
+    }
+    .cadastro-locais form {
+      display: flex;
+      justify-content: start;
+      align-items: stretch;
+      flex-direction: column;
+      width: 85%;
+      margin-bottom: 2rem;
+    }
+    footer .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+  }
+  @media (max-width: 780px) {
+    /*======================================== INDEX ======================================== */
+    /* HERO */
+    .HeroSwiper .hero-slide-1 .content,
+    .HeroSwiper .hero-slide-3 .content {
+      width: 550px;
+    }
+    .HeroSwiper .hero-slide-1 .content h1,
+    .HeroSwiper .hero-slide-3 .content h1 {
+      font-size: 2.8rem;
+    }
+    .HeroSwiper .hero-slide-1 .content p,
+    .HeroSwiper .hero-slide-3 .content p {
+      padding: 0;
+    }
+    /* DESTAQUE */
+    .destaque .content .desc h3 {
+      font-size: 2rem;
+    }
+    /* LOCAIS */
+    .locais .content {
+      display: grid;
+      grid-template-columns: repeat(2, 250px);
+    }
+    .locais .content .link-card img {
+      height: 250px;
+    }
+    .empresas .EmpresasSwiper h2 {
+      padding-inline: 2rem;
+    }
+  }
+  @media (max-width: 768px) {
+    /*======================================== INDEX ======================================== */
+    /* HERO */
+    .HeroSwiper .hero-slide-1 .content,
+    .HeroSwiper .hero-slide-3 .content {
+      width: 100%;
+      padding: 3rem 4rem;
+    }
+    .HeroSwiper .hero-slide-1 .content form {
+      width: 100%;
+    }
+    .HeroSwiper .hero-slide-2 {
+      display: grid;
+      grid-template-columns: repeat(1, 500px);
+    }
+    .HeroSwiper .hero-slide-3 {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: column;
+    }
+    /* DESTAQUE */
+    .destaque .content {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 3rem;
+      place-items: center;
+    }
+    .destaque .content img {
+      width: 80%;
+    }
+    .destaque .content .desc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    /* FILTRO DE PESQUISA COM MAPA */
+    .filtersearch {
+      padding: 2rem;
+    }
+    .filtersearch .search-map {
+      min-width: 250px;
+      flex: 1;
+      height: 300px;
+    }
+    .filtersearch .content {
+      width: 100%;
+      flex: 1;
+    }
+  }
+  @media (max-width: 700px) {
+    .container, .destaque, .services, .food, .filtersearch, .locais, .descontos-especiais {
+      padding: 2rem;
+    }
+    .container h2, .destaque h2, .services h2, .food h2, .filtersearch h2, .locais h2, .descontos-especiais h2 {
+      font-size: 1.5rem;
+      margin: 2rem auto 1rem;
+      text-align: center;
+    }
+    /*======================================== INDEX ======================================== */
+    /* SERVIÇOS */
+    .services {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .services .content {
+      padding: 0.5rem;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .services .content .service-card {
+      width: 400px;
+    }
+    /* FOOD */
+    .food {
+      padding: 0.5rem 0rem 0.5rem 2rem;
+    }
+    .food .FoodSwiper .swiper-wrapper .swiper-slide {
+      padding-bottom: 1rem;
+      overflow-x: hidden;
+      display: grid;
+      grid-template-columns: repeat(4, 250px);
+    }
+    .locais .content {
+      padding-inline: 4rem;
+      display: grid;
+      grid-template-columns: repeat(2, 250px);
+    }
+    .locais .content .link-card {
+      width: 100%;
+    }
+    .locais .content .link-card img {
+      width: 100%;
+    }
+    .cadastro-locais {
+      text-align: center;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .cadastro-locais form {
+      display: flex;
+      justify-content: start;
+      align-items: stretch;
+      flex-direction: column;
+      width: 85%;
+      margin-bottom: 2rem;
+    }
+    footer .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+  }
+  @media (max-width: 668px) {
+    /*======================================== INDEX ======================================== */
+    .HeroSwiper .swiper-slide .content {
+      padding: 2rem 3.5rem;
+    }
+    .HeroSwiper .hero-slide-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .HeroSwiper .hero-slide-2 .content {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 0;
+    }
+    .HeroSwiper .hero-slide-2 .content p,
+    .HeroSwiper .hero-slide-2 .content h2,
+    .HeroSwiper .hero-slide-2 .content div {
+      padding: 0;
+    }
+    .HeroSwiper .hero-slide-2 .content h2 {
+      font-size: 2.5rem;
+    }
+    .locais .content {
+      padding-inline: 2rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .destaque {
+      padding-inline: 4rem;
+    }
+    .locais .content {
+      display: grid;
+      grid-template-columns: repeat(1, 250px);
+      padding: 1rem 2rem;
+    }
+    .cadastro-locais .content {
+      width: 90%;
+    }
+    .cadastro-locais .content h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .cadastro-locais .content p {
+      width: 80%;
+      color: #6C757D;
+    }
+    .filtersearch .tools {
+      display: block;
+      flex: 1;
+      margin: 5%;
+    }
+    .filtersearch .content {
+      padding: 0;
+    }
+    .filtersearch .content .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 0.3rem;
+      margin-top: 8px;
+    }
+    .filtersearch .content .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .tagincolhe .pop,
+    .filtersearch .content .swiper-wrapper .swiper-slide .card-pratos .info .acima .spans .tagincolhe .freeshipping {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 570px) {
+    .HeroSwiper .content {
+      padding: 1rem;
+    }
+    .filtersearch .content .PesquisaSwiper .swiper-slide {
+      margin-top: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+    .filtersearch .content .PesquisaSwiper #cardone {
+      margin: 2rem auto auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-direction: column;
+      padding: 0;
+      max-width: 320px;
+    }
+    .filtersearch .content .PesquisaSwiper #cardone img {
+      width: 100%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .filtersearch .content .PesquisaSwiper #cardone .info {
+      padding: 0.5rem;
+    }
+    .filtersearch .content .PesquisaSwiper #cardone .info .pop {
+      margin-left: 0.3rem;
+    }
+    .filtersearch .content .PesquisaSwiper #cardone .info h3 {
+      margin-top: 0.5rem;
+    }
+    .filtersearch .content .PesquisaSwiper #cardone .info .extras {
+      margin-top: 1.5rem;
+    }
+    .cadastro-locais {
+      padding: 1rem;
+    }
+    .cadastro-locais .content {
+      width: 100%;
+    }
+    .cadastro-locais .content form {
+      width: 100%;
+      padding: 0.5rem;
+    }
+    footer .content {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  @media (max-width: 460px) {
+    .destaque {
+      padding: 2rem;
+    }
+    .destaque .content {
+      gap: 1.75rem;
+    }
+    .destaque .content h3 {
+      margin-bottom: 1rem;
+    }
+    /* HERO */
+    .HeroSwiper .swiper-slide .content {
+      padding: 1.5rem;
+    }
+    .HeroSwiper .swiper-slide .content h1,
+    .HeroSwiper .swiper-slide .content h2 {
+      font-size: 2rem;
+    }
+    .HeroSwiper .hero-slide-2 {
+      display: grid;
+      grid-template-columns: repeat(1, 400px);
+      gap: 1rem;
+    }
+    .HeroSwiper .hero-slide-2 .content .paragrafito {
+      margin-bottom: 1rem;
+    }
+    .HeroSwiper .hero-slide-2 .content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .services .content {
+      padding: 2rem;
+    }
+    .services .content .service-card {
+      max-width: 340px;
+    }
+    .filtersearch {
+      padding: 1rem;
+    }
+  }
+  @media (max-width: 360px) {
+    .food {
+      padding: 0.7rem;
+    }
+    .food .content .swiper-wrapper .swiper-slide {
+      padding: 0;
+    }
+    /* HERO */
+    .HeroSwiper .swiper-slide .content {
+      padding: 0 1.5rem;
+    }
+    .HeroSwiper .swiper-slide .content h1,
+    .HeroSwiper .swiper-slide .content h2 {
+      font-size: 1.8rem;
+    }
+    .services .content {
+      padding: 1rem;
+    }
+    .services .content .service-card {
+      max-width: 290px;
+    }
+    .filtersearch .content .btn-input-text {
+      max-width: 150px;
+    }
+    .cadastro-locais form {
+      width: 100%;
+      padding: 1rem;
+    }
+  }/*# sourceMappingURL=styles.css.map */

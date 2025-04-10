@@ -1,0 +1,725 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/*======================================== IMPORTS ======================================== */
+/* TIPO DE LETRA */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* OUTROS */
+@import 'partials/vars';
+@import 'partials/mixins';
+@import 'partials/essencial';
+@import 'partials/header';
+
+
+
+/*======================================== HERO - BANNER EM CARROSSEL ======================================== */
+
+.HeroSwiper {
+    width: 100vw;
+    height: 500px;
+    background-color: $color-white;
+
+    .hero-slide-1 {
+        @include HeroSlide();
+        @include FlexGrid (1, 1fr);
+        place-items: center;
+
+        &::before {
+
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        img {
+            filter: blur(3px);
+        }
+
+        .content {
+            text-align: center;
+            margin: auto;
+            padding: 1.5rem;
+            max-width: 800px;
+
+            h1 {
+                @apply text-6xl font-bold;
+                color: $color-white;
+            }
+
+            p {
+                margin-top: 1rem;
+                padding-inline: 3rem;
+                color: $color-gray-dark;
+            }
+
+            form {
+                @include FlexBox(stretch, center, row);
+                flex-wrap: wrap;
+                gap: 0;
+                transition: $transicao;
+                margin-top: 2rem;
+                margin-inline: auto;
+                max-width: 500px;
+                border-radius: $radius-first;
+
+                &:hover {
+                    outline: 2px solid $color-red;
+                }
+
+                button {
+                    background-color: $color-white-background;
+                    padding: .7rem 1rem;
+                    border-top-left-radius: $radius-first;
+                    border-bottom-left-radius: $radius-first;
+                    border: none;
+                    outline: none;
+
+                    i {
+                        @apply text-orange-600;
+                        font-weight: $weight-semibold;
+                    }
+                }
+
+                input {
+                    flex-grow: 1;
+                    background-color: white;
+                    padding: .7rem 1rem;
+                    border-top-right-radius: $radius-first;
+                    border-bottom-right-radius: $radius-first;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .hero-slide-2 {
+        @include HeroSlide();
+        @include FlexGrid (1, 1fr);
+        justify-items: start;
+        padding: 5rem;
+
+        &::before {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+
+        .content {
+            @apply justify-center flex flex-col;
+            padding: 3rem 0rem 3rem 0;
+
+            .paragrafito {
+                @apply text-sm font-bold text-orange-600;
+            }
+
+            h2 {
+                @apply text-6xl font-bold text-white;
+            }
+
+            .desc {
+                @apply text-gray-300 font-light text-base;
+                margin-bottom: 2rem;
+                opacity: .9;
+            }
+
+            .cta {
+                justify-self: flex-start;
+                @include FlexBox (start, center, row);
+                gap: .5rem;
+
+                a {
+                    width: 9rem;
+                }
+
+                .btn-third {
+                    @apply text-orange-600 font-medium text-sm items-center text-center hover:text-white;
+                }
+            }
+        }
+    }
+
+    .hero-slide-3 {
+        @include HeroSlide();
+        @include FlexBox (center, center, column);
+        padding: 5rem;
+
+        &::before {
+
+            background-color: rgba(0, 0, 0, 0.226);
+        }
+
+        img {
+            filter: blur(2px);
+        }
+
+        .content {
+            max-width: 800px;
+            text-align: center;
+            margin: auto;
+            padding: 1rem;
+            @include FlexBox (center, center, column);
+            gap: 1rem;
+
+            h1 {
+                @apply text-6xl font-bold;
+                color: $color-white;
+            }
+
+            p {
+                @apply text-gray-300 font-light text-base;
+                padding-inline: 3rem;
+            }
+
+            .btn-third {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    .swiper-pagination-bullet,
+    .swiper-pagination-bullet-active {
+        @apply bg-orange-600;
+    }
+}
+
+
+/*======================================== DESTAQUE DA SEMANA ======================================== */
+.destaque {
+    @extend .container;
+    @include FlexBox (center, center, column);
+    gap: 4rem;
+    background-color: $color-white;
+    padding-inline: 0;
+
+    h2 {
+        margin: 0;
+    }
+
+    .content {
+        @include FlexGrid (2, 1fr);
+        align-items: start;
+        justify-items: center;
+        gap: 6rem;
+
+
+        img {
+            justify-self: end;
+        }
+
+
+        .desc {
+            @include FlexBox (start, flex-start, column);
+            gap: 1.5rem;
+            height: 100%;
+
+            h3 {
+                @apply font-bold text-6xl;
+                color: $color-black;
+            }
+
+            p {
+                font-weight: $weight-extralight;
+
+                a {
+                    @apply text-orange-500 font-semibold;
+                    transition: $transicao;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .readmore {
+                @apply text-orange-600 hover:underline font-medium text-sm inline-flex items-center mt-1;
+            }
+        }
+    }
+}
+
+
+/*======================================== SERVIÇOS ======================================== */
+.services {
+    @extend .container;
+    @include FlexBox (center, center, column);
+    background-color: $color-white-3;
+
+    h2 {
+        text-transform: none;
+        margin: 0 0 1rem;
+        color: $color-black-3;
+    }
+
+    .content {
+        @include FlexGrid (3, 1fr);
+        text-align: center;
+        place-items: center;
+        margin: auto;
+        padding: 2rem;
+        gap: 2rem;
+
+        .service-card {
+            @apply shadow-md;
+            border-radius: $radius-first;
+            padding: 1.5rem;
+            background-color: $color-white;
+            @include FlexBox (center, center, column);
+            gap: .5rem;
+
+            i {
+                @apply text-orange-600;
+                font-size: 4rem;
+            }
+
+            h3 {
+                color: $color-black-3;
+                font-size: $size-base;
+            }
+
+            p {
+                color: $color-gray-darkness;
+                font-weight: $weight-light;
+                font-size: $size-smallito;
+            }
+        }
+    }
+}
+
+
+/*======================================== FOOD ======================================== */
+.food {
+    padding: 2rem 8rem;
+
+    h2 {
+        @apply text-4xl font-bold text-gray-800 uppercase;
+        margin: 0;
+        text-align: center;
+    }
+
+    @include FlexBox(center, center, column);
+    background-color: $color-white;
+
+
+    .FoodSwiper {
+        width: 100%;
+        height: 100%;
+        padding-block: 4rem;
+
+        .swiper-wrapper {
+            padding-inline: 1.5rem;
+
+            .swiper-slide {
+                @apply relative;
+                @include FlexBox(center, center, row);
+
+                .card-pratos {
+                    max-width: 300px;
+                    @apply shadow-md;
+                    border-radius: $radius-second;
+
+                    .bx-heart {
+                        @apply text-3xl -top-6 -right-5 z-40 transition-all duration-500 text-white absolute bg-orange-600 cursor-pointer rounded-full w-12 h-12 flex justify-center items-center font-semibold hover:bg-white hover:text-orange-600;
+                    }
+
+                    img {
+                        @apply w-full cursor-pointer;
+                        object-fit: cover;
+                        border-top-left-radius: $radius-second;
+                        border-top-right-radius: $radius-second;
+                    }
+
+                    .info {
+                        @extend .informacoes-cards-vertical;
+                        height: 250px;
+                        padding: .7rem;
+                        background-color: $color-white;
+                        border-bottom-left-radius: $radius-second;
+                        border-bottom-right-radius: $radius-second;
+
+                    }
+                }
+            }
+        }
+
+
+        .swiper-botoes {
+            @apply absolute;
+            width: 170px;
+            @include FlexBox (space-between, flex-start, row);
+            gap: 1rem;
+            top: 7%;
+            left: -2%;
+            z-index: 3;
+
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            scale: .4;
+            font-weight: $weight-extrabold;
+            color: $color-gray-dark;
+            background-color: $color-white;
+            padding: 3rem;
+            border-radius: $radius-around;
+            box-shadow: $shadow-3;
+            transition: $transicao;
+
+            &:hover {
+                @apply text-orange-600 bg-orange-100;
+                scale: .4;
+            }
+        }
+
+
+
+    }
+
+}
+
+
+/*======================================== EMPRESAS ======================================== */
+.EmpresasSwiper {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 6rem;
+    background-color: $color-white-2;
+
+    h2 {
+        text-align: center;
+        align-self: center;
+        margin-top: 4rem;
+        color: $color-black-2;
+        text-transform: uppercase;
+    }
+
+    .swiper-slide {
+        @include FlexBox (center, center, column);
+        text-align: center;
+        font-size: 18px;
+        padding-block: 6rem;
+
+        a {
+            img {
+                width: 150px;
+                border-radius: $radius-around;
+                box-shadow: $shadow-3;
+                padding: 2rem;
+                margin-bottom: 0.5rem;
+                background-color: $color-white;
+            }
+        }
+
+        h3 {
+            font-size: $size-large;
+        }
+
+        .info {
+            @include FlexBox(center, center, row);
+
+            p {
+                font-size: $size-smallito;
+                font-weight: $weight-light;
+            }
+        }
+    }
+}
+
+
+
+/*======================================== DESCONTOS ESPECIAIS ======================================== */
+.descontos-especiais {
+    position: relative;
+    height: 400px;
+    @extend .container;
+    @include FlexGrid(1, 1fr);
+    place-items: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.442);
+        background-blend-mode: darken;
+        z-index: 1;
+        filter: blur(1px);
+
+    }
+
+    .content {
+        position: absolute;
+        @include FlexBox(center, center, column);
+        background-color: transparent;
+        padding: 2rem;
+        gap: 1rem;
+        text-align: center;
+        z-index: 2;
+
+        h3 {
+            font-weight: $weight-bold;
+            color: $color-white;
+            font-size: $size-big;
+        }
+
+        p {
+            font-weight: $weight-medium;
+            color: $color-gray-dark;
+        }
+
+        .btn-p-2 {
+            font-size: $size-smaller;
+        }
+    }
+}
+
+
+
+/*======================================== PESQUISA FILTRADA & MAP ======================================== */
+.filtersearch {
+    @extend .container;
+    @include FlexBox(space-between, stretch, row);
+    flex-wrap: wrap;
+    background-color: $color-white;
+    gap: 1rem;
+
+    h2 {
+        width: 100%;
+        flex: 100%;
+        margin: auto;
+        font-size: $size-x-large;
+        text-transform: none;
+        color: $color-blue-dark;
+        padding: 1.5rem;
+        background-color: $color-blue-light;
+        border-radius: $radius-second;
+    }
+
+
+    .search-map {
+        min-width: 400px;
+        flex: 1;
+        height: 400px;
+        padding: 2rem;
+        box-shadow: $shadow-2;
+        border-radius: $radius-first;
+        background-color: $color-white-background;
+
+    }
+
+    .content {
+        @include FlexBox (center, stretch, column);
+        flex: 1;
+        padding: 2rem;
+        box-shadow: $shadow-2;
+        border-radius: $radius-first;
+        background-color: $color-white-background;
+
+
+        .tools {
+            position: relative;
+            box-shadow: $shadow-2;
+            @include FlexBox (center, stretch, row);
+            border-radius: $radius-first;
+
+
+            input,
+            button {
+                border: none;
+                font-size: $size-large;
+                background-color: $color-white;
+            }
+
+            .btn-lupa {
+                padding: .8rem;
+                border-top-left-radius: $radius-second;
+                border-bottom-left-radius: $radius-second;
+            }
+
+            .btn-input-text {
+                padding: .8rem;
+                flex: 65%;
+                font-size: $size-base;
+            }
+
+            .btn-close {
+                padding: .4rem;
+                cursor: pointer;
+                color: $color-red-light;
+
+                i {
+                    border-radius: $radius-second;
+                    padding: .4rem;
+                    transition: $transicao;
+
+                    &:hover {
+                        background-color: $color-white-background;
+                        color: $color-red;
+                    }
+                }
+            }
+
+            .btn-filtro {
+                color: $color-black-2;
+                padding: .3rem;
+                padding-right: .8rem;
+                cursor: pointer;
+                border-top-right-radius: $radius-second;
+                border-bottom-right-radius: $radius-second;
+
+                i {
+                    font-size: $size-small;
+                    border-radius: $radius-second;
+                    padding: .5rem;
+                    transition: $transicao;
+
+                    &:hover {
+                        background-color: $kino-color-white-light;
+                        color: $color-gray-darkness;
+                    }
+                }
+            }
+
+
+            &:hover .resultados {
+                display: block;
+            }
+
+            .resultados {
+                display: none;
+                position: absolute;
+                flex-grow: 1;
+                padding: 1rem;
+                background-color: $color-white;
+                width: 100%;
+                top: 110%;
+                left: 0;
+                border-radius: $radius-second;
+                transition: $transicao;
+                z-index: 3;
+
+                h3 {
+                    color: $color-gray-dark;
+                    font-size: $size-base;
+                }
+
+                .resultado {
+                    display: none;
+                    width: 100%;
+                    padding: 2rem;
+                    margin: auto;
+                    background-color: white;
+                    border-radius: $radius-second;
+                }
+
+            }
+        }
+
+        .PesquisaSwiper {
+            position: relative;
+            padding: 1rem;
+            max-width: 600px;
+            width: 100%;
+            height: 100%;
+            padding-bottom: 5.5rem;
+            z-index: 2;
+
+
+            .swiper-botoes {
+                width: 160px;
+                @include FlexBox (space-between, center, row);
+                gap: 1rem;
+                position: absolute;
+                top: 3%;
+                right: -5%;
+                z-index: 3;
+
+            }
+
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                scale: .37;
+                font-weight: $weight-extrabold;
+                color: $color-gray-dark;
+                background-color: $color-white;
+                padding: 3rem;
+                border-radius: $radius-around;
+                box-shadow: $shadow-3;
+                transition: $transicao;
+
+                &:hover {
+                    background-color: $color-gray-light;
+                    color: $color-red;
+                    scale: .4;
+                }
+            }
+
+
+
+            .swiper-wrapper {
+                padding: 0 2rem 0 0;
+                margin-top: 3.5rem;
+                background-color: $color-white-background;
+
+                .swiper-slide {
+                    @include FlexBox (start, stretch, column);
+                    border-radius: $radius-second;
+                    background-color: $color-white;
+                    gap: 1rem;
+                    background-color: $color-white-background;
+
+                    .card-pratos {
+                        @include FlexBox(stretch, center, row);
+                        background-color: $color-white;
+                        width: 100%;
+                        padding: 1rem;
+                        border-radius: $radius-second;
+                        gap: .5rem;
+                        cursor: pointer;
+
+                        img {
+                            width: 120px;
+                            border-radius: $radius-second;
+                            transition: $transicao;
+
+                            &:hover {
+                                scale: 1.02;
+                            }
+                        }
+
+                        .info {
+                            @extend .informacoes-cards-horizontal;
+                        }
+                    }
+                }
+
+            }
+
+            .swiper-pagination-bullet,
+            .swiper-pagination-bullet-active {
+                background-color: $color-red-light;
+                font-size: $size-smallito;
+                padding: .5rem;
+
+                p {
+                    margin-top: -8px;
+                    margin-left: -3px;
+                    color: white;
+
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+
+@import 'partials/resposinvidade';
