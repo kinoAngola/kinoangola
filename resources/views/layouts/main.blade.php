@@ -18,8 +18,20 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+
+    <!-- Mapbox CSS -->
+    <link href="{{ asset('https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css') }}" rel="stylesheet">
+
+
     {{-- BOXICON --}}
     <link href="{{ asset('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css') }}" rel="stylesheet">
+
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="{{ asset('https://unpkg.com/leaflet/dist/leaflet.css') }}" />
+
+    <!-- Leaflet JS -->
+    <script src="{{ asset('https://unpkg.com/leaflet/dist/leaflet.js') }}"></script>
 
     <!-- SWIPER CSS -->
     <link rel="stylesheet" href="{{ asset('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css') }}" />
@@ -28,8 +40,8 @@
         href="{{ asset('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap') }}"
         rel="stylesheet">
 
-    <!-- Scripts -->
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+
+    @yield('links-head')
 
 </head>
 
@@ -43,7 +55,7 @@
             <div class="line3"></div>
         </div>
 
-        <a href="index.html" class="logo-link">
+        <a href="{{ route('home') }}" class="logo-link">
             <img src="{{ asset('/assets/images/logomarca/Kino Logo (1).png') }}" width="40" height="40"
                 alt="Kino Angola Logo">
             Kino Angola
@@ -51,19 +63,19 @@
         <nav class="navbar">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="{{route('home')}}" class="nav-link">Página Inicial</a>
+                    <a href="{{ route('home') }}" class="nav-link">Página Inicial</a>
                 </li>
                 <li class="nav-item">
-                    <a href="resources/views/explorar.html" class="nav-link">Explorar</a>
+                    <a href="{{ route('explore') }}" class="nav-link">Explorar</a>
                 </li>
                 <li class="nav-item">
-                    <a href="resources/views/partners.html" class="nav-link">Parceria</a>
+                    <a href="{{ route('partners') }}" class="nav-link">Parceria</a>
                 </li>
                 <li class="nav-item">
-                    <a href="resources/views/whykino.html" class="nav-link">Why Kino?</a>
+                    <a href="{{route('whykino')}}" class="nav-link">Why Kino?</a>
                 </li>
                 <li class="nav-item">
-                    <a href="resources/views/about.html" class="nav-link">Sobre</a>
+                    <a href="{{route('aboutus')}}" class="nav-link">Sobre</a>
                 </li>
             </ul>
         </nav>
@@ -71,31 +83,31 @@
 
 
             @if (Route::has('login'))
-                
-                    @auth
-                        <a href="resources/views/cart.html" class="link-extra">
-                            <i class='bx bx-cart-alt'></i>
+
+                @auth
+                    <a href="resources/views/cart.html" class="link-extra">
+                        <i class='bx bx-cart-alt'></i>
                         <span>+99</span></a>
-                        <a href="{{ url('/profile') }}" class="link-extra"><i class='bx bx-user-circle'></i></a>
-                        <a href="{{ url('/dashboard') }}" class="link-extra"><i class='bx bxs-dashboard'></i></a>
-                    @else
-                        <a class="btn-principal" href="{{ route('login') }}">
-                            {{ __('Login') }}
-                        </a>
+                    <a href="{{ route('company.profile') }}" class="link-extra"><i class='bx bx-user-circle'></i></a>
+                    <a href="{{ url('/dashboard') }}" class="link-extra"><i class='bx bxs-dashboard'></i></a>
+                @else
+                    <a class="btn-principal" href="{{ route('login') }}">
+                        {{ __('Login') }}
+                    </a>
 
 
-                        ​ @if (Route::has('register'))
-                            ​ <a class="btn-alt" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            ​
-                        @endif
-                    ​ @endauth
-                    ​
-                
+                    ​ @if (Route::has('register'))
+                        ​ <a class="btn-alt" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        ​
+                    @endif
+                ​ @endauth
+                ​
+
                 ​
             @endif
         </div>
     </header>
-      
+
 
 
     {{-- ============================================== BODY =============================================== --}}
@@ -110,10 +122,11 @@
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
-                    <a href="https://flowbite.com/" class="flex items-center">
-                        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
-                        <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    <a href="{{ route('home') }}" class="flex items-center">
+                        <img src="{{ asset('/assets/images/logomarca/kino logo (1).png') }}" class="h-8 me-3"
+                            alt="Kino Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">KINO
+                            ANGOLA</span>
                     </a>
                 </div>
                 <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -121,7 +134,7 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li class="mb-4">
-                                <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                                <a href="{{ route('home') }}" class="hover:underline capitalize">KINO ANGOLA</a>
                             </li>
                             <li>
                                 <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
@@ -132,7 +145,7 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li class="mb-4">
-                                <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                                <a href="https://github.com/kinoAngola" class="hover:underline ">Github</a>
                             </li>
                             <li>
                                 <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
@@ -154,8 +167,9 @@
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
             <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
-                        href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
+                        href="{{ route('home') }}" class="hover:text-orange-600 hover:underline">Kino Angola</a>. All
+                    Rights Reserved.
                 </span>
                 <div class="flex mt-4 sm:justify-center sm:mt-0">
                     <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -257,6 +271,7 @@
 --}}
     <!-- Swiper JS -->
     <script src="{{ asset('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js') }}"></script>
+    <script src="{{asset('https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js')}}"></script>
 </body>
 
 </html>

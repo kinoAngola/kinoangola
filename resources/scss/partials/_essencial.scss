@@ -177,7 +177,7 @@ h2 {
             align-self: flex-end;
             font-weight: $weight-bold;
             font-size: $size-smaller;
-            color: $color-black-3;
+            @apply text-orange-600;
         }
     }
 }
@@ -188,7 +188,7 @@ h2 {
     .part-above {
 
         h3 {
-            @apply text-xl font-semibold text-gray-800;
+            @apply text-lg font-semibold text-gray-800 mt-5;
             margin-left: 0.3rem;
         }
 
@@ -238,17 +238,18 @@ h2 {
                 }
             }
             
-            .avaliacoes {
-                @apply text-yellow-500 flex flex-row items-center;
-
-                i {
-                    @apply transition-all duration-500 cursor-pointer hover:-translate-y-1/4;
-                }
-            }
         }
 
         .first {
-            @apply flex flex-row justify-between items-center mt-10;
+            @apply flex flex-row justify-between items-center;
+            
+            .avaliacoes {
+                @apply text-yellow-500 flex flex-row items-center text-sm;
+
+                i {
+                    @apply transition-all duration-500 cursor-pointer text-sm hover:-translate-y-1/4;
+                }
+            }
 
         }
     }

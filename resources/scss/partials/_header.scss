@@ -1,14 +1,11 @@
 /*======================================== CABEÇALHO ======================================== */
 
 header {
-    position: sticky;
     @include FlexBox (space-around, center, row);
     background-color: $color-white;
     padding: 1rem;
     box-shadow: $box-shadow;
-    position: sticky;
-    top: 0;
-    z-index: $z-indez-2;
+    @apply sticky top-0 z-50 w-full;
 
     .mobile-menu {
         display: none;
@@ -180,4 +177,39 @@ header {
         }
 
     }
+}
+
+
+@media (max-width: 992px) {
+
+    header {
+        .mobile-menu {
+            scale: .6;
+        }
+
+        .logo-link {
+            display: none;
+        }
+
+        .navbar {
+
+            .nav-list {
+                margin-top: 3rem;
+            }
+        }
+
+        .extras {
+            .link-extra {
+
+                i {
+                    font-size: 1.3rem;
+                }
+
+                .link-login {
+                    font-size: $size-base;
+                }
+            }
+        }
+    }
+
 }

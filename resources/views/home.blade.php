@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('links-head')
+    <!-- Scripts -->
+    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+@endsection
+
+
 @section('content')
     <!--==================================== CORPO ==================================== -->
     <main>
@@ -102,7 +108,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -114,9 +124,9 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -142,47 +152,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
-                            <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
-                            <div class="info">
-                                <div class="part-above">
-                                    <h3>Churrasco na Brasa</h3>
-                                    <div class="descs">
-                                        <div class="impo">
-                                            <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
-                                                Plaza </a>
-                                            <p class="ml-1"> - Luanda, Camama</p>
-                                        </div>
-                                    </div>
-                                    <div class="second">
-                                        <div class="spans">
-                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
-                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
-                                        </div>
-                                        <div class="avaliacoes">
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                        </div>
-                                    </div>
-                                    <div class="first1">
-                                    </div>
-                                </div>
-                                <div class="cta">
-                                    <a href="#" class="btn-principal">Comprar</a>
-                                    <p class="text-orange-600 font-semibold text-xl justify-self-end p-1 border rounded-md border-orange-600">2.000,00 Kz</p>
-                                </div>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
                             </div>
-                        </div>
-
-                    </div>
-
-                    <div class="swiper-slide">
-
-                        <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -194,9 +168,9 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -222,7 +196,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -234,9 +212,53 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
+                                    <div class="descs">
+                                        <div class="impo">
+                                            <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
+                                                Plaza </a>
+                                            <p class="ml-1"> - Luanda, Camama</p>
+                                        </div>
+                                    </div>
+                                    <div class="second">
+                                        <div class="spans">
+                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta">
+                                    <a href="#" class="btn-principal">Comprar</a>
+                                </div>
+                            </div>
+                        </div> <span></span>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <div class="card-pratos">
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
+                            <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
+                            <div class="info">
+                                <div class="part-above">
+                                    <div class="first">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
+                                    </div>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -262,7 +284,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -274,9 +300,9 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -302,7 +328,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -314,9 +344,9 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -345,7 +375,6 @@
                     <div class="swiper-button-next"></div>
                 </span>
             </div>
-
 
             <div class="swiper FoodSwiper">
                 <div class="swiper-wrapper">
@@ -353,7 +382,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -365,9 +398,9 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -393,7 +426,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -405,9 +442,9 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -433,7 +470,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -445,9 +486,141 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
+                                    <div class="descs">
+                                        <div class="impo">
+                                            <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
+                                                Plaza </a>
+                                            <p class="ml-1"> - Luanda, Camama</p>
+                                        </div>
+                                    </div>
+                                    <div class="second">
+                                        <div class="spans">
+                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta">
+                                    <a href="#" class="btn-principal">Comprar</a>
+                                </div>
+                            </div>
+                        </div> <span></span>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <div class="card-pratos">
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
+                            <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
+                            <div class="info">
+                                <div class="part-above">
+                                    <div class="first">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
+                                    </div>
+                                    <h3>Churras na Brasa</h3>
+                                    <div class="descs">
+                                        <div class="impo">
+                                            <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
+                                                Plaza </a>
+                                            <p class="ml-1"> - Luanda, Camama</p>
+                                        </div>
+                                    </div>
+                                    <div class="second">
+                                        <div class="spans">
+                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta">
+                                    <a href="#" class="btn-principal">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <div class="card-pratos">
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
+                            <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
+                            <div class="info">
+                                <div class="part-above">
+                                    <div class="first">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
+                                    </div>
+                                    <h3>Churras na Brasa</h3>
+                                    <div class="descs">
+                                        <div class="impo">
+                                            <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
+                                                Plaza </a>
+                                            <p class="ml-1"> - Luanda, Camama</p>
+                                        </div>
+                                    </div>
+                                    <div class="second">
+                                        <div class="spans">
+                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta">
+                                    <a href="#" class="btn-principal">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <div class="card-pratos">
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
+                            <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
+                            <div class="info">
+                                <div class="part-above">
+                                    <div class="first">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
+                                    </div>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -476,7 +649,6 @@
                     <div class="swiper-button-next"></div>
                 </span>
             </div>
-
 
             <div class="swiper FoodSwiper">
                 <div class="swiper-wrapper">
@@ -484,7 +656,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -496,9 +672,9 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -524,7 +700,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -536,9 +716,9 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -564,7 +744,11 @@
                     <div class="swiper-slide">
 
                         <div class="card-pratos">
-                            <i class='bx bx-heart'></i>
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
                             <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
                             <div class="info">
                                 <div class="part-above">
@@ -576,9 +760,141 @@
                                             <i class='bx bxs-star'></i>
                                             <i class='bx bxs-star'></i>
                                         </div>
-                                        <p class="text-orange-600 font-semibold text-xl justify-self-end">2.000,00 Kz</p>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
                                     </div>
-                                    <h3>Churrasco na Brasa</h3>
+                                    <h3>Churras na Brasa</h3>
+                                    <div class="descs">
+                                        <div class="impo">
+                                            <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
+                                                Plaza </a>
+                                            <p class="ml-1"> - Luanda, Camama</p>
+                                        </div>
+                                    </div>
+                                    <div class="second">
+                                        <div class="spans">
+                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta">
+                                    <a href="#" class="btn-principal">Comprar</a>
+                                </div>
+                            </div>
+                        </div> <span></span>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <div class="card-pratos">
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
+                            <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
+                            <div class="info">
+                                <div class="part-above">
+                                    <div class="first">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
+                                    </div>
+                                    <h3>Churras na Brasa</h3>
+                                    <div class="descs">
+                                        <div class="impo">
+                                            <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
+                                                Plaza </a>
+                                            <p class="ml-1"> - Luanda, Camama</p>
+                                        </div>
+                                    </div>
+                                    <div class="second">
+                                        <div class="spans">
+                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta">
+                                    <a href="#" class="btn-principal">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <div class="card-pratos">
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
+                            <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
+                            <div class="info">
+                                <div class="part-above">
+                                    <div class="first">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
+                                    </div>
+                                    <h3>Churras na Brasa</h3>
+                                    <div class="descs">
+                                        <div class="impo">
+                                            <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
+                                                Plaza </a>
+                                            <p class="ml-1"> - Luanda, Camama</p>
+                                        </div>
+                                    </div>
+                                    <div class="second">
+                                        <div class="spans">
+                                            <span class='pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='freeshipping'><i class='bx bxs-badge-check'></i> Entrega</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta">
+                                    <a href="#" class="btn-principal">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                        <div class="card-pratos">
+                            <div class="icons">
+
+                                <i class='bx bx-heart'></i>
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
+                            <img src="{{ asset('/assets/images/qd (13).png') }}" alt="">
+                            <div class="info">
+                                <div class="part-above">
+                                    <div class="first">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="text-orange-600 text-lg font-bold justify-self-end">2.000,00 Kz</p>
+                                    </div>
+                                    <h3>Churras na Brasa</h3>
                                     <div class="descs">
                                         <div class="impo">
                                             <a href="#" class="hover:underline hover:text-orange-600 font-medium">La
@@ -607,6 +923,7 @@
                     <div class="swiper-button-next"></div>
                 </span>
             </div>
+
 
 
         </section>
@@ -617,102 +934,120 @@
             <div class="swiper EmpresasSwiper">
                 <h2>Os que dedicam-se, merecem destaque!</h2>
                 <div class="swiper-wrapper">
+
                     <div class="swiper-slide">
-                        <div class="swiper-slide">
-                            <a href="resources/views/profile.html" class="emp-link"><img
-                                    src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
-                            <h3>Kino Angola</h3>
-                            <div class="info">
-                                <p>Restaurante</p>
-                                <p>, Luanda</p>
-                            </div>
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
                         </div>
-                        <div class="swiper-slide">
-                            <a href="resources/views/profile.html" class="emp-link"><img
-                                    src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
-                            <h3>Kino Angola</h3>
-                            <div class="info">
-                                <p>Restaurante</p>
-                                <p>, Luanda</p>
-                            </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="swiper-slide">
-                                <a href="resources/views/profile.html" class="emp-link"><img
-                                        src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
-                                <h3>Kino Angola</h3>
-                                <div class="info">
-                                    <p>Restaurante</p>
-                                    <p>, Luanda</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper-slide">
-                                    <a href="resources/views/profile.html" class="emp-link"><img
-                                            src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
-                                    <h3>Kino Angola</h3>
-                                    <div class="info">
-                                        <p>Restaurante</p>
-                                        <p>, Luanda</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="swiper-slide">
-                                        <a href="resources/views/profile.html" class="emp-link"><img
-                                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}"
-                                                alt="businesses"></a>
-                                        <h3>Kino Angola</h3>
-                                        <div class="info">
-                                            <p>Restaurante</p>
-                                            <p>, Luanda</p>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="swiper-slide">
-                                            <a href="resources/views/profile.html" class="emp-link"><img
-                                                    src="{{ asset('/assets/images/logomarca/logoo.jpg') }}"
-                                                    alt="businesses"></a>
-                                            <h3>Kino Angola</h3>
-                                            <div class="info">
-                                                <p>Restaurante</p>
-                                                <p>, Luanda</p>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="swiper-slide">
-                                                <a href="resources/views/profile.html" class="emp-link"><img
-                                                        src="{{ asset('/assets/images/logomarca/logoo.jpg') }}"
-                                                        alt="businesses"></a>
-                                                <h3>Kino Angola</h3>
-                                                <div class="info">
-                                                    <p>Restaurante</p>
-                                                    <p>, Luanda</p>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <div class="swiper-slide">
-                                                    <a href="resources/views/profile.html" class="emp-link"><img
-                                                            src="{{ asset('/assets/images/logomarca/logoo.jpg') }}"
-                                                            alt="businesses"></a>
-                                                    <h3>Kino Angola</h3>
-                                                    <div class="info">
-                                                        <p>Restaurante</p>
-                                                        <p>, Luanda</p>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="swiper-slide">
-                                                        <a href="resources/views/profile.html" class="emp-link"><img
-                                                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}"
-                                                                alt="businesses"></a>
-                                                        <h3>Kino Angola</h3>
-                                                        <div class="info">
-                                                            <p>Restaurante</p>
-                                                            <p>, Luanda</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="resources/views/profile.html" class="emp-link"><img
+                                src="{{ asset('/assets/images/logomarca/logoo.jpg') }}" alt="businesses"></a>
+                        <h3>Kino Angola</h3>
+                        <div class="info">
+                            <p>Restaurante</p>
+                            <p>, Luanda</p>
+                        </div>
+                    </div>
+
+                </div>
+
         </section>
 
         <!--==================================== DESCONTOS ESPECIAIS ==================================== -->
@@ -730,6 +1065,12 @@
         <section class="filtersearch">
             <h2 style="color: #003789;">Quem procura, acha!</h2>
             <div class="search-map">
+                <div id="map" style="height: 400px; border-radius: 8px;"></div>
+
+                <!-- Inputs escondidos para armazenar a lat/lng -->
+                <input type="hidden" name="latitude" id="latitude">
+                <input type="hidden" name="longitude" id="longitude">
+                <input type="hidden" name="endereco" id="endereco">
 
             </div>
             <div class="content">
@@ -752,7 +1093,7 @@
                         <div class="swiper-slide">
 
                             <div class="card-pratos" id="cardone">
-                                <img src="public/assets/images/qd (13).png" alt="">
+                                <img src="{{ asset('assets/images/qd (13).png') }}" alt="">
                                 <div class="info">
                                     <div class="acima">
                                         <div class="spans">
@@ -762,7 +1103,7 @@
                                         </div>
                                         <div class="cta">
                                             <i class='bx bx-cart-add'></i>
-                                            <a href="#" class="btn-p-2">Comprar</a>
+                                            <a href="#" class="btn-principal">Comprar</a>
                                         </div>
                                     </div>
                                     <h3>Churrasco</h3>
@@ -786,7 +1127,7 @@
                             </div>
 
                             <div class="card-pratos" id="cardone">
-                                <img src="public/assets/images/qd (13).png" alt="">
+                                <img src="{{ asset('assets/images/qd (13).png') }}" alt="">
                                 <div class="info">
                                     <div class="acima">
                                         <div class="spans">
@@ -796,7 +1137,7 @@
                                         </div>
                                         <div class="cta">
                                             <i class='bx bx-cart-add'></i>
-                                            <a href="#" class="btn-p-2">Comprar</a>
+                                            <a href="#" class="btn-principal">Comprar</a>
                                         </div>
                                     </div>
                                     <h3>Churrasco</h3>
@@ -820,7 +1161,7 @@
                             </div>
 
                             <div class="card-pratos" id="cardone">
-                                <img src="public/assets/images/qd (13).png" alt="">
+                                <img src="{{ asset('assets/images/qd (13).png') }}" alt="">
                                 <div class="info">
                                     <div class="acima">
                                         <div class="spans">
@@ -830,113 +1171,7 @@
                                         </div>
                                         <div class="cta">
                                             <i class='bx bx-cart-add'></i>
-                                            <a href="#" class="btn-p-2">Comprar</a>
-                                        </div>
-                                    </div>
-                                    <h3>Churrasco</h3>
-                                    <div class="description">
-                                        <p>La Plaza</p>
-                                        <div class="sep"></div>
-                                        <p>Luanda, Camama</p>
-
-                                    </div>
-                                    <div class="extras">
-                                        <div class="avaliacoes">
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                        </div>
-                                        <p class="price">2.000,00 Kz</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="swiper-slide">
-
-                            <div class="card-pratos" id="cardone">
-                                <img src="public/assets/images/qd (13).png" alt="">
-                                <div class="info">
-                                    <div class="acima">
-                                        <div class="spans">
-                                            <span class='tagincolhe pop'><i class='bx bxs-crown'></i> Popular</span>
-                                            <span class='tagincolhe freeshipping'><i class='bx bxs-badge-check'></i>
-                                                Entrega</span>
-                                        </div>
-                                        <div class="cta">
-                                            <i class='bx bx-cart-add'></i>
-                                            <a href="#" class="btn-p-2">Comprar</a>
-                                        </div>
-                                    </div>
-                                    <h3>Churrasco</h3>
-                                    <div class="description">
-                                        <p>La Plaza</p>
-                                        <div class="sep"></div>
-                                        <p>Luanda, Camama</p>
-
-                                    </div>
-                                    <div class="extras">
-                                        <div class="avaliacoes">
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                        </div>
-                                        <p class="price">2.000,00 Kz</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-pratos" id="cardone">
-                                <img src="public/assets/images/qd (13).png" alt="">
-                                <div class="info">
-                                    <div class="acima">
-                                        <div class="spans">
-                                            <span class='tagincolhe pop'><i class='bx bxs-crown'></i> Popular</span>
-                                            <span class='tagincolhe freeshipping'><i class='bx bxs-badge-check'></i>
-                                                Entrega</span>
-                                        </div>
-                                        <div class="cta">
-                                            <i class='bx bx-cart-add'></i>
-                                            <a href="#" class="btn-p-2">Comprar</a>
-                                        </div>
-                                    </div>
-                                    <h3>Churrasco</h3>
-                                    <div class="description">
-                                        <p>La Plaza</p>
-                                        <div class="sep"></div>
-                                        <p>Luanda, Camama</p>
-
-                                    </div>
-                                    <div class="extras">
-                                        <div class="avaliacoes">
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                            <i class='bx bxs-star'></i>
-                                        </div>
-                                        <p class="price">2.000,00 Kz</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-pratos" id="cardone">
-                                <img src="public/assets/images/qd (13).png" alt="">
-                                <div class="info">
-                                    <div class="acima">
-                                        <div class="spans">
-                                            <span class='tagincolhe pop'><i class='bx bxs-crown'></i> Popular</span>
-                                            <span class='tagincolhe freeshipping'><i class='bx bxs-badge-check'></i>
-                                                Entrega</span>
-                                        </div>
-                                        <div class="cta">
-                                            <i class='bx bx-cart-add'></i>
-                                            <a href="#" class="btn-p-2">Comprar</a>
+                                            <a href="#" class="btn-principal">Comprar</a>
                                         </div>
                                     </div>
                                     <h3>Churrasco</h3>
@@ -964,7 +1199,7 @@
                         <div class="swiper-slide">
 
                             <div class="card-pratos" id="cardone">
-                                <img src="public/assets/images/qd (13).png" alt="">
+                                <img src="{{ asset('assets/images/qd (13).png') }}" alt="">
                                 <div class="info">
                                     <div class="acima">
                                         <div class="spans">
@@ -974,7 +1209,7 @@
                                         </div>
                                         <div class="cta">
                                             <i class='bx bx-cart-add'></i>
-                                            <a href="#" class="btn-p-2">Comprar</a>
+                                            <a href="#" class="btn-principal">Comprar</a>
                                         </div>
                                     </div>
                                     <h3>Churrasco</h3>
@@ -998,7 +1233,7 @@
                             </div>
 
                             <div class="card-pratos" id="cardone">
-                                <img src="public/assets/images/qd (13).png" alt="">
+                                <img src="{{ asset('assets/images/qd (13).png') }}" alt="">
                                 <div class="info">
                                     <div class="acima">
                                         <div class="spans">
@@ -1008,7 +1243,7 @@
                                         </div>
                                         <div class="cta">
                                             <i class='bx bx-cart-add'></i>
-                                            <a href="#" class="btn-p-2">Comprar</a>
+                                            <a href="#" class="btn-principal">Comprar</a>
                                         </div>
                                     </div>
                                     <h3>Churrasco</h3>
@@ -1032,7 +1267,7 @@
                             </div>
 
                             <div class="card-pratos" id="cardone">
-                                <img src="public/assets/images/qd (13).png" alt="">
+                                <img src="{{ asset('assets/images/qd (13).png') }}" alt="">
                                 <div class="info">
                                     <div class="acima">
                                         <div class="spans">
@@ -1042,7 +1277,113 @@
                                         </div>
                                         <div class="cta">
                                             <i class='bx bx-cart-add'></i>
-                                            <a href="#" class="btn-p-2">Comprar</a>
+                                            <a href="#" class="btn-principal">Comprar</a>
+                                        </div>
+                                    </div>
+                                    <h3>Churrasco</h3>
+                                    <div class="description">
+                                        <p>La Plaza</p>
+                                        <div class="sep"></div>
+                                        <p>Luanda, Camama</p>
+
+                                    </div>
+                                    <div class="extras">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="price">2.000,00 Kz</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+
+                            <div class="card-pratos" id="cardone">
+                                <img src="{{ asset('assets/images/qd (13).png') }}" alt="">
+                                <div class="info">
+                                    <div class="acima">
+                                        <div class="spans">
+                                            <span class='tagincolhe pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='tagincolhe freeshipping'><i class='bx bxs-badge-check'></i>
+                                                Entrega</span>
+                                        </div>
+                                        <div class="cta">
+                                            <i class='bx bx-cart-add'></i>
+                                            <a href="#" class="btn-principal">Comprar</a>
+                                        </div>
+                                    </div>
+                                    <h3>Churrasco</h3>
+                                    <div class="description">
+                                        <p>La Plaza</p>
+                                        <div class="sep"></div>
+                                        <p>Luanda, Camama</p>
+
+                                    </div>
+                                    <div class="extras">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="price">2.000,00 Kz</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-pratos" id="cardone">
+                                <img src="{{ asset('assets/images/qd (13).png') }}" alt="">
+                                <div class="info">
+                                    <div class="acima">
+                                        <div class="spans">
+                                            <span class='tagincolhe pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='tagincolhe freeshipping'><i class='bx bxs-badge-check'></i>
+                                                Entrega</span>
+                                        </div>
+                                        <div class="cta">
+                                            <i class='bx bx-cart-add'></i>
+                                            <a href="#" class="btn-principal">Comprar</a>
+                                        </div>
+                                    </div>
+                                    <h3>Churrasco</h3>
+                                    <div class="description">
+                                        <p>La Plaza</p>
+                                        <div class="sep"></div>
+                                        <p>Luanda, Camama</p>
+
+                                    </div>
+                                    <div class="extras">
+                                        <div class="avaliacoes">
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                            <i class='bx bxs-star'></i>
+                                        </div>
+                                        <p class="price">2.000,00 Kz</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-pratos" id="cardone">
+                                <img src="{{ asset('assets/images/qd (13).png') }}" alt="">
+                                <div class="info">
+                                    <div class="acima">
+                                        <div class="spans">
+                                            <span class='tagincolhe pop'><i class='bx bxs-crown'></i> Popular</span>
+                                            <span class='tagincolhe freeshipping'><i class='bx bxs-badge-check'></i>
+                                                Entrega</span>
+                                        </div>
+                                        <div class="cta">
+                                            <i class='bx bx-cart-add'></i>
+                                            <a href="#" class="btn-principal">Comprar</a>
                                         </div>
                                     </div>
                                     <h3>Churrasco</h3>
@@ -1077,28 +1418,70 @@
             </div>
         </section>
 
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiaGVybWluaW9vZmljaWFsIiwiYSI6ImNtOWQyNjZvcjBwN3Eya3NhdjF0N2ttcnIifQ.AunZIxwvqCp75A_Ud4BOsw';
+        
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [13.2343, -8.8383], // Ponto inicial: Luanda
+                zoom: 12
+            });
+        
+            const marker = new mapboxgl.Marker({
+                draggable: true
+            })
+            .setLngLat([13.2343, -8.8383]) // Mesmo ponto
+            .addTo(map);
+        
+            function updateInputs(lngLat) {
+                document.getElementById('latitude').value = lngLat.lat;
+                document.getElementById('longitude').value = lngLat.lng;
+        
+                // Usar API de geocodificação reversa do Mapbox
+                fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${lngLat.lng},${lngLat.lat}.json?access_token=${mapboxgl.accessToken}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const address = data.features[0]?.place_name || '';
+                        document.getElementById('endereco').value = address;
+                    });
+            }
+        
+            marker.on('dragend', () => {
+                const lngLat = marker.getLngLat();
+                updateInputs(lngLat);
+            });
+        
+            map.on('click', (e) => {
+                const lngLat = e.lngLat;
+                marker.setLngLat(lngLat);
+                updateInputs(lngLat);
+            });
+        </script>
+        
+
         <!--==================================== LOCAIS DE LAZER ==================================== -->
         <section class="locais">
             <h2>Toda diversidade gastronômica</h2>
             <div class="content">
-                <a href="#" class="link-card">
-                    <img src="public/assets/images/qd new (1).png" alt="Roulote">
+                <a href="{{ route('dashboard') }}" class="link-card">
+                    <img src="{{ asset('/assets/images/qd new (1).png') }}" alt="Roulote">
                     <h3>Roulotes</h3>
                 </a>
                 <a href="#" class="link-card">
-                    <img src="public/assets/images/qd (13).png" alt="Churrascarias">
+                    <img src="{{ asset('/assets/images/qd (13).png') }}" alt="Churrascarias">
                     <h3>Churrascarias</h3>
                 </a>
                 <a href="#" class="link-card">
-                    <img src="public/assets/images/qd (12).png" alt="Bares">
+                    <img src="{{ asset('/assets/images/qd (12).png') }}" alt="Bares">
                     <h3>Bares</h3>
                 </a>
                 <a href="#" class="link-card">
-                    <img src="public/assets/images/qd (11).png" alt="Restaurantes">
+                    <img src="{{ asset('/assets/images/qd (11).png') }}" alt="Restaurantes">
                     <h3>Restaurantes</h3>
                 </a>
             </div>
-            <a href="resources/views/explorar.html" class="btn-p-2">Explorar Mais</a>
+            <a href="resources/views/explorar.html" class="btn-principal">Explorar Mais</a>
         </section>
 
         <section class="cadastro-locais">
@@ -1110,21 +1493,57 @@
                     Inscreva-se agora
                     mesmo e saiba tudo que podemos proporcionar para si!</p>
             </div>
-            <form action="#">
-                <h3>Registrar-se</h3>
-                <hr>
-                <input type="text" required placeholder="Nome da Empresa">
-                <input type="text" required placeholder="Telefone">
-                <input type="email" required placeholder="E-mail">
-                <input type="password" required placeholder="Senha">
-                <input type="submit" value="Criar Conta" class="btn-p-2">
-                <div class="lembrar">
-                    <input type="checkbox" name="remember" id="remember">
-                    <label for="remember">Lembrar Senha</label>
-                </div>
 
-                <a href="resources/views/sign.html">Já tenho uma conta</a>
-            </form>
+            @if (Route::has('login'))
+                @auth
+                    <img src="{{ asset('/assets/images/vetc (1).jpg') }}" width="270px" height="270px" alt="Logado">
+                @else
+                    <form action="{{ route('register') }}" method="POST">
+                        @csrf
+                        <h3>Registrar-se</h3>
+                        <hr>
+                        <!-- Name -->
+                        <div>
+                            <x-text-input placeholder="Nome" id="name" class="block w-full" type="text"
+                                name="name" :value="old('name')" required autofocus autocomplete="name" />
+                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="mt-1">
+                            <x-text-input placeholder="E-mail" id="email" class="block w-full" type="email"
+                                name="email" :value="old('email')" required autocomplete="username" />
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mt-1">
+
+                            <x-text-input placeholder="Senha" id="password" class="block w-full" type="password"
+                                name="password" required autocomplete="new-password" />
+
+                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mt-1">
+
+                            <x-text-input placeholder="Confirmar senha" id="password_confirmation" class="block w-full"
+                                type="password" name="password_confirmation" required autocomplete="new-password" />
+
+                            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                        </div>
+                        <input type="submit" value="Criar Conta" class="btn-principal">
+
+                        <a class="underline text-sm hover:text-oange-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                            href="{{ route('login') }}">
+                            {{ __('Already registered?') }}
+                        </a>
+                    </form>
+
+                ​ @endauth
+            @endif
+
         </section>
 
     </main>

@@ -16,7 +16,7 @@
     }
 
     .cadastro-locais {
-        padding: 2rem 6rem;
+        padding: 4rem 6rem;
     }
 
 }
@@ -66,39 +66,6 @@
 
 @media (max-width: 992px) {
 
-    header {
-        width: 100%;
-
-        .mobile-menu {
-            scale: .6;
-        }
-
-        .logo-link {
-            display: none;
-        }
-
-        .navbar {
-
-            .nav-list {
-                margin-top: 3rem;
-            }
-        }
-
-        .extras {
-            .link-extra {
-
-                i {
-                    font-size: 1.3rem;
-                }
-
-                .link-login {
-                    font-size: $size-base;
-                }
-            }
-        }
-    }
-
-
     .container {
 
 
@@ -131,20 +98,37 @@
         }
     }
 
+
+    .food {
+        .FoodSwiper {
+            .swiper-wrapper {
+                .swiper-slide {
+                    .card-pratos {
+                        .icons {
+                            @apply right-3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
     .cadastro-locais {
-        text-align: center;
-        padding: 2rem;
-        @include FlexBox(space-between, center, column);
-        gap: 3rem;
+        padding: 4rem 2rem;
+        gap: 2rem;
 
         .content {
-            width: 70%;
+            text-align: left;
+            flex: 50%;
+
+            p {
+                text-align: left;
+            }
         }
 
         form {
-            @include FlexBox(start, stretch, column);
-            width: 85%;
-            margin-bottom: 2rem;
+            flex: 50%
         }
 
     }
@@ -191,6 +175,57 @@
         }
     }
 
+
+}
+
+@media (max-width: 860px) {
+    .food {
+        padding: 0;
+
+        .FoodSwiper {
+            padding-inline: 0;
+
+            .swiper-wrapper {
+                padding: 0;
+
+                .swiper-slide {
+                    margin: 0;
+                    padding: 0;
+
+                    .card-pratos {
+
+                        min-width: 250px;
+                        scale: 1;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cadastro-locais {
+        @include FlexBox(center, center, column);
+        gap: 3rem;
+
+        .content {
+            text-align: center;
+
+            p {
+                text-align: center;
+            }
+        }
+
+        form {
+            @include FlexBox(start, stretch, column);
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+    }
 
 }
 
@@ -363,20 +398,6 @@
         }
     }
 
-    .cadastro-locais {
-        text-align: center;
-        padding: 2rem;
-        @include FlexBox(space-between, center, column);
-        gap: 3rem;
-
-        form {
-            @include FlexBox(start, stretch, column);
-            width: 85%;
-            margin-bottom: 2rem;
-        }
-
-    }
-
 
     footer {
         .content {
@@ -400,22 +421,14 @@
 
 @media (max-width: 650px) {
     .food {
-        padding: 0;
-
         .FoodSwiper {
-            padding-inline: 0;
-
             .swiper-wrapper {
-                padding: 0;
-
                 .swiper-slide {
-                    margin: 0;
-                    padding: 0;
 
                     .card-pratos {
 
-                        min-width: 270px;
-                        scale: .99;
+                        max-width: 250px;
+                        scale: 1;
 
                         img {
                             width: 100%;
@@ -425,8 +438,8 @@
             }
         }
     }
-}
 
+}
 
 @media (max-width: 600px) {
 
@@ -444,16 +457,25 @@
     .cadastro-locais {
 
         .content {
-            width: 90%;
+            @include FlexBox(center, center, column);
 
             h2 {
-                font-size: $size-biggest;
-                margin-bottom: 2rem;
+                font-size: 3rem;
             }
 
             p {
+                text-align: center;
                 width: 80%;
-                color: $color-gray-darkness-2;
+            }
+        }
+
+        form {
+            h3 {
+                font-size: $size-x-large;
+            }
+
+            input {
+                font-size: $size-base;
             }
         }
     }
@@ -567,7 +589,6 @@
     }
 
     .cadastro-locais {
-        padding: 1rem;
 
         .content {
             width: 100%;
@@ -647,12 +668,36 @@
     .filtersearch {
         padding: 1rem;
     }
+
+    .cadastro-locais {
+        padding: 4rem 1rem;
+
+        .content {
+            h2 {
+                padding: 0rem 1rem;
+            }
+        }
+    }
 }
 
+@media (max-width:385px) {
+
+    .cadastro-locais {
+
+        .content {
+            h2 {
+                font-size: $size-biggest;
+            }
+        }
+
+        form {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+}
 
 @media (max-width:360px) {
-
-
 
     /* HERO */
     .HeroSwiper {
@@ -685,7 +730,7 @@
                 .swiper-slide {
 
                     .card-pratos {
-                        scale: .9;
+                        scale: 1;
 
                         img {
                             width: 100%;
@@ -704,11 +749,4 @@
         }
     }
 
-    .cadastro-locais {
-
-        form {
-            width: 100%;
-            padding: 1rem;
-        }
-    }
 }

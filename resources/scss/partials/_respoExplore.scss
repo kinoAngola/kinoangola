@@ -1,0 +1,82 @@
+
+@media (max-width: 992px) {
+    .hero {
+        padding: 6rem 6rem;
+    }
+
+}
+
+@media (max-width: 950px) {
+    .hero {
+        padding: 6rem 4rem;
+
+        img {
+            max-width: 325px;
+        }
+    }
+
+}
+
+@media (max-width: 860px) {
+    .hero {
+        padding: 6rem 8rem;
+        @include FlexBox (center, center, column);
+    }
+
+    .content {
+        @apply flex flex-col items-center justify-center text-center;
+
+        button {
+            @apply self-center;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .main {
+        padding: 4rem;
+    }
+}
+
+
+@media (max-width: 650px) {
+   
+}
+
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 4rem 4rem;
+    }
+
+    .main {
+        padding: 2rem;
+
+        .explorartudo {
+            .FoodSwiper {
+                .swiper-wrapper {
+                    padding: 0;
+
+                    .swiper-slide {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 490px) {
+    .hero {
+        padding: 4rem 2rem;
+        @include FlexBox (center, center, column);
+    }
+
+    .content {
+
+        h1 {
+            @apply text-lg;
+        }
+    }
+}

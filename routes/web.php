@@ -7,9 +7,33 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/testes', function () {
+    return view('testes');
+})->name('testes');
+
+Route::get('/why-kino', function () {
+    return view('whykino');
+})->name('whykino');
+
+Route::get('/sobre', function () {
+    return view('aboutus');
+})->name('aboutus');
+
+Route::get('/explorar', function () {
+    return view('explore');
+})->name('explore');
+
+Route::get('/parcerias', function () {
+    return view('partners');
+})->name('partners');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/company-profile', function () {
+    return view('company-profile');
+})->middleware(['auth', 'verified'])->name('company.profile');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

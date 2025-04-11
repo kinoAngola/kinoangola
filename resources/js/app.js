@@ -72,7 +72,6 @@ var FoodSwiper = new Swiper(".FoodSwiper", {
     el: ".swiper-pagination",
     clickable: true,
   }, slidesPerView: "auto",
-  centeredSlides: true,
   autoplay: {
     delay: 7000,
     disableOnInteraction: false,
@@ -80,23 +79,23 @@ var FoodSwiper = new Swiper(".FoodSwiper", {
   breakpoints: {
     650: {
       slidesPerView: 2,
-      spaceBetween: 30,
+      spaceBetween: 25,
     },
-    700: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    860: {
+    800: {
       slidesPerView: 3,
-      spaceBetween: 30,
+      spaceBetween: 25,
     },
     1150: {
       slidesPerView: 4,
-      spaceBetween: 30,
+      spaceBetween: 25,
+    },
+    1600: {
+      slidesPerView: 5,
+      spaceBetween: 25,
+    },
+    2150: {
+      slidesPerView: 6,
+      spaceBetween: 25,
     },
   },
   loop: true,
@@ -142,25 +141,6 @@ document.querySelectorAll('.EmpresasSwiper .swiper-slide').forEach(slide => {
   });
 });
 
-
-
-/*======================================== TESTEMUNHO ======================================== */
-var swiper = new Swiper(".testimonials-partners", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
 
 
 /*======================================== MENU HAMBURGUER ======================================== */
@@ -233,7 +213,7 @@ mobileNavbar.init();
 
 
 
-// Função para ocultar o texto, aumentar o tamanho dos ícones e manter visíveis os ícones
+// CARD PRATOS: Função para ocultar o texto, aumentar o tamanho dos ícones e manter visíveis os ícones
 function adjustDisplay() {
   const spans = document.querySelectorAll('.tagincolhe');
 
@@ -289,28 +269,3 @@ window.addEventListener('resize', adjustDisplay);
 window.addEventListener('load', adjustDisplay);
 
 
-
-
-// Função para alterar a foto de capa
-function changeCoverPhoto(event) {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      document.getElementById('cover-perfil').src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-}
-
-// Função para alterar a foto de perfil
-function changeProfilePhoto(event) {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      document.getElementById('profile-photo').src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-}

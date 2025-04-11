@@ -289,11 +289,11 @@
 
 /*======================================== FOOD ======================================== */
 .food {
-    padding: 2rem 8rem;
+    @extend .container;
 
     h2 {
-        @apply text-4xl font-bold text-gray-800 uppercase;
-        margin: 0;
+        @apply font-bold text-gray-800 uppercase;
+        padding: 2rem auto;
         text-align: center;
     }
 
@@ -307,23 +307,33 @@
         padding-block: 4rem;
 
         .swiper-wrapper {
-            padding-inline: 1.5rem;
+            @apply shadow-none;
+            padding-inline: 1rem;
+            padding-top: 4rem;
 
             .swiper-slide {
-                @apply relative;
+                @apply relative shadow-none;
                 @include FlexBox(center, center, row);
 
                 .card-pratos {
-                    max-width: 300px;
-                    @apply shadow-md;
+                    min-width: 100%;
+                    scale: 1;
+                    @apply transition-all duration-500 overflow-hidden shadow-md;
+                    transition: .4s;
                     border-radius: $radius-second;
 
-                    .bx-heart {
-                        @apply text-3xl -top-6 -right-5 z-40 transition-all duration-500 text-white absolute bg-orange-600 cursor-pointer rounded-full w-12 h-12 flex justify-center items-center font-semibold hover:bg-white hover:text-orange-600;
+                    .icons{
+                        @apply flex flex-col items-end justify-center top-3 -right-7 transition-all duration-500 z-40 absolute bg-transparent;
+
+
+                        .bx-heart, .bx-cart-alt {
+                            @apply text-xl text-white cursor-pointer font-extralight hover:text-orange-600;
+                            transition: .4s;
+                        }
                     }
 
                     img {
-                        @apply w-full cursor-pointer;
+                        @apply w-full cursor-pointer relative;
                         object-fit: cover;
                         border-top-left-radius: $radius-second;
                         border-top-right-radius: $radius-second;
@@ -331,12 +341,16 @@
 
                     .info {
                         @extend .informacoes-cards-vertical;
-                        height: 250px;
+                        height: 220px;
                         padding: .7rem;
                         background-color: $color-white;
                         border-bottom-left-radius: $radius-second;
                         border-bottom-right-radius: $radius-second;
 
+                    }
+
+                    &:hover .icons{
+                        @apply right-3;
                     }
                 }
             }
@@ -348,18 +362,17 @@
             width: 170px;
             @include FlexBox (space-between, flex-start, row);
             gap: 1rem;
-            top: 7%;
-            left: -2%;
+            top: 8%;
+            right: -1%;
             z-index: 3;
 
         }
 
         .swiper-button-prev,
         .swiper-button-next {
+            @apply text-orange-600 bg-orange-50;
             scale: .4;
             font-weight: $weight-extrabold;
-            color: $color-gray-dark;
-            background-color: $color-white;
             padding: 3rem;
             border-radius: $radius-around;
             box-shadow: $shadow-3;
@@ -393,6 +406,10 @@
         text-transform: uppercase;
     }
 
+    .swiper-wrapper{
+        @apply flex flex-row overflow-hidden;
+
+        
     .swiper-slide {
         @include FlexBox (center, center, column);
         text-align: center;
@@ -422,6 +439,7 @@
                 font-weight: $weight-light;
             }
         }
+    }
     }
 }
 
@@ -641,18 +659,17 @@
 
             .swiper-button-prev,
             .swiper-button-next {
+                
+            @apply text-orange-600 bg-orange-50;
                 scale: .37;
                 font-weight: $weight-extrabold;
-                color: $color-gray-dark;
-                background-color: $color-white;
                 padding: 3rem;
                 border-radius: $radius-around;
                 box-shadow: $shadow-3;
                 transition: $transicao;
 
                 &:hover {
-                    background-color: $color-gray-light;
-                    color: $color-red;
+                    @apply text-orange-600 bg-orange-100;
                     scale: .4;
                 }
             }
@@ -700,7 +717,7 @@
 
             .swiper-pagination-bullet,
             .swiper-pagination-bullet-active {
-                background-color: $color-red-light;
+                @apply bg-orange-600;
                 font-size: $size-smallito;
                 padding: .5rem;
 
@@ -718,8 +735,159 @@
 
 }
 
+/*======================================== LOCAIS DE LAZER ======================================== */
+.locais {
+    @extend .container;
+    @include FlexBox (center, center, column);
+    background-color: $color-beige-lighten;
+
+    .content {
+        @include FlexGrid (4, 250px);
+        padding-top: 3rem;
+        place-items: center;
+        gap: 2rem;
+        margin: 1rem 0 4rem;
+
+        .link-card {
+            position: relative;
+            @include FlexBox (center, center, column);
+            padding: 1rem;
+            width: 100%;
+            height: 250px;
+            border-radius: $radius-first;
+            box-shadow: $shadow-2;
+            transition: $transicao;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.064);
+                z-index: 2;
+            }
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: $radius-first;
+                z-index: 1;
+                transition: $transicao;
+            }
+
+            h3 {
+                position: absolute;
+                transform: translateY(100px);
+                z-index: 3;
+                opacity: 0;
+                visibility: hidden;
+                color: $color-white;
+                transition: $transicao;
+
+                &:hover {
+                    text-decoration: underline;
+                    @apply text-orange-600;
+                }
+            }
+
+            &:hover {
+                scale: 1.03;
+            }
+
+            &:hover h3 {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0px);
+            }
+
+            &:hover img {
+                filter: blur(1px);
+            }
+        }
+
+        .btn-principal {
+
+            &:hover {
+                @apply text-orange-600 bg-white;
+            }
+        }
+    }
+}
 
 
+/*======================================== CADASTRO ======================================== */
+.cadastro-locais {
+    padding: 6rem 12rem;
+    background-color: $color-white;
+    @include FlexBox(space-between, start, row);
+    gap: 3rem;
+
+    .content {
+        @include FlexBox(start, start, column);
+        max-width: 500px;
+
+        h2 {
+            color: $color-black;
+            font-size: $size-super-biggest;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: $size-base;
+            color: $color-gray-darkness-2;
+            font-weight: $weight-light;
+        }
+
+    }
+
+    form {
+        @include FlexBox(start, stretch, column);
+        justify-self: end;
+        width: 400px;
+        background-color: $color-gray-blue;
+        box-shadow: $shadow-2;
+        border-radius: $radius-second;
+        padding: 2rem;
+        border: solid 1px $color-gray-light;
+
+        h3 {
+            color: $color-black-2;
+            font-size: $size-big;
+            margin-bottom: 1.5rem;
+        }
+
+        hr {
+            margin-bottom: 1rem;
+            background-color: $color-gray-light;
+        }
+
+        input {
+            padding: .7rem 1rem;
+            border-radius: $radius-second;
+            margin-bottom: 1rem;
+            border: solid 1px $color-gray-light;
+            width: 100%;
+        }
+
+        a {
+            align-self: flex-end;
+            @apply text-gray-600;
+            font-size: $size-small;
+            opacity: .6;
+            transition: $transicao;
+
+            &:hover {
+                text-decoration: underline;
+                @apply text-orange-600;
+                opacity: 1;
+            }
+        }
+    }
+}
 
 
+@import 'partials/footer';
 @import 'partials/resposinvidade';
