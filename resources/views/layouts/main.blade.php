@@ -88,7 +88,7 @@
                     <a href="resources/views/cart.html" class="link-extra">
                         <i class='bx bx-cart-alt'></i>
                         <span>+99</span></a>
-                    <a href="{{ route('company.profile') }}" class="link-extra"><i class='bx bx-user-circle'></i></a>
+                    <a href="{{ route('companyProfile') }}" class="link-extra"><i class='bx bx-user-circle'></i></a>
                     <a href="{{ url('/dashboard') }}" class="link-extra"><i class='bx bxs-dashboard'></i></a>
                 @else
                     <a class="btn-principal" href="{{ route('login') }}">

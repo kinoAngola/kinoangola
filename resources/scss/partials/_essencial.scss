@@ -95,19 +95,12 @@ h2 {
             @include FlexBox(space-between, center, row);
             gap: .35rem;
 
-            .btn-p-2,
+            
             i {
                 padding: 0.5rem;
                 border-radius: $radius-first;
             }
 
-            .btn-p-2 {
-                font-size: $size-small;
-
-                &:hover {
-                    scale: 1.02;
-                }
-            }
 
             i {
                 font-size: $size-base;
