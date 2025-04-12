@@ -43,7 +43,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    font-weight: $weight-medium;
+    @apply text-orange-600 bg-white hover:bg-orange-100 border-0 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 text-center;
     box-shadow: $shadow-3;
 }
 
@@ -56,7 +56,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid orange;
+    @apply border-4 border-gray-50; /* Borda laranja */
     /* Borda laranja */
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -125,6 +125,7 @@ aside {
         h2{
             margin: 1.5rem 1.5rem .5rem;
             color: $color-black-3;
+            @apply text-2xl font-semibold;
         }
         
 
@@ -204,11 +205,17 @@ main {
         background: white;
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+        h2{
+            margin-bottom: 1rem;
+            color: $color-black-3;
+            @apply text-2xl font-semibold;
+        }
     }
     
     .section-item {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     
     .menu-item {
@@ -216,19 +223,20 @@ main {
         align-items: flex-start;
         gap: 10px;
         margin: 1rem;
+
+        
+    h3 {
+        @apply font-bold text-gray-800 mt-1;
+        font-size: 1rem;
+    }
     }
     
     .menu-item img {
-        width: 100px;
+        width: 120px;
         border-radius: 10px;
         cursor: pointer;
     }
     
-    .menu-item h3 {
-        margin-top: 0.5rem;
-        font-size: 1rem;
-        color: #333;
-    }
     
     .menu-item p {
         margin-top: 0.2rem;
@@ -256,12 +264,12 @@ main {
         flex-direction: column;
     }
     
-    input,
-    textarea {
+    
+    textarea, input {
         margin: 10px 0;
         padding: 10px;
         width: 100%;
-        border-radius: $radius-second;
+        @apply rounded-md;
         border: solid 1px $color-gray-darkness;
     }
 
@@ -280,6 +288,74 @@ main {
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.swiper {
+    margin: 100px auto;
+    max-width: 450px;
+    height: 240px;
+  }
+
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    .card{
+
+        height: 200px;
+        @apply flex flex-col w-full items-stretch border justify-center gap-1 rounded-lg shadow-md p-4 bg-white text-gray-900;
+       
+        .avs{
+            i{
+                @apply text-yellow-500;
+            }
+        }
+
+        .comment{
+            p{
+                @apply text-gray-700 text-sm;
+            }
+        }
+
+        .profile-user{
+            margin-top: 0.5rem;
+            @apply flex items-center justify-between gap-2;
+
+            img{
+                @apply rounded-full;
+                width: 40px;
+                height: 40px;
+                border-radius: 0%;
+            }
+            .desc{
+                flex: 90%;
+                @apply flex flex-col items-start justify-center;
+
+
+                .name{
+                    font-size: .9rem;
+                    color: $color-black-3;
+                    @apply font-semibold;
+                }
+                .username{
+                    @apply font-extralight text-gray-500 text-sm;
+                }
+            }
+        }
+    }
+  }
 
 
 
