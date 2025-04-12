@@ -15,147 +15,89 @@
 @import 'partials/header';
 
 
-body{
-    background-color: #e2e2e2;
-}
-
-
-
 section {
-    margin: 40px auto;
+    max-width: 1200px;
+    margin: 6rem auto 8rem;
     padding: 20px;
     border-radius: 8px;
 }
+
 h2 {
-    color: #ff7b00;
+    @apply text-4xl font-bold text-orange-600;
 }
 
 
+.our-history {
 
+    .content {
+        @apply flex flex-row justify-between items-center gap-4;
+        p{
+            max-width: 500px;
+        }
 
-
-
-.faq {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-
-.faq .faq-list {
-    list-style: none;
-}
-
-.faq .faq-list li {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-    border-radius: 10px;
-}
-
-.faq .faq-list li input[type=checkbox] {
-    display: none;
-}
-
-.faq .faq-list label {
-    position: relative;
-    cursor: pointer;
-    font-size: 1.25rem;
-    font-weight: 800;
-    padding: .5rem;
-}
-
-.faq .faq-list label::after{
-    content: '>';
-    position: absolute;
-    top: .5rem;
-    right: .5rem;
-    transform: rotate(90deg);
-    transition: .4s;
-}
-
-
-.faq .faq-list label span {
-    font-size: 1rem;
-    color: #fff;
-    display: inline-block;
-    border-radius: 10px;
-    padding: .35rem .7rem;
-    background-color: #252525;
-    margin-right: 0.5rem;
-}
-
-.faq .faq-list .resposta {
-    background-color: white;
-    padding-inline: 1rem;
-    color: #555555;
-    max-height: 0;
-    overflow: hidden;
-    border-radius: 10px;
-    @apply transition-all duration-700 ease-in;
-
-    h3{
-        padding: 0 1rem .2rem;
-        @apply text-lg font-semibold mt-4 text-gray-800;
     }
 }
 
-.faq .resposta p{
-    padding: 0 1rem .5rem;
+
+.values{
+    
+    .value-item{
+        @apply text-white bg-orange-600;
+        h3{
+            @apply text-8xl mb-4 font-bold;
+        }
+    }
+
 }
 
 
-.faq input[type=checkbox]:checked + label + .resposta{
-    max-height: 1000px;
-    padding-top: 0 .5rem 1rem;
+.team-section{
+    h2{
+        margin-bottom: 3rem;
+    }
+
+    .team{
+        .team-member{
+            .photo{
+                @apply text-6xl rounded-full self-center flex-grow-0 mx-auto;
+            }
+
+            h4{
+                @apply text-lg font-semibold  mt-2;
+            }
+
+            p{
+                @apply text-sm text-gray-500;
+            }
+        }
+    }
 }
 
-.faq input[type=checkbox]:checked + label span{
-    background-color: rgb(102, 102, 102);
-}
 
-.faq input[type=checkbox]:checked + label::after{
-    transform: rotate(-90deg);
-}
-
-
-
-
-
-
-.features, .values, .testimonials, .cta {
+.info,
+.values,
+.team,
+.contact {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
-.feature-item, .value-item, .testimonial-item, .cta-box {
+
+.info-item,
+.value-item,
+.team-member {
     flex: 1 1 300px;
     padding: 20px;
     background: #f1f1f1;
     border-radius: 8px;
     text-align: center;
 }
-button {
-    padding: 10px;
-    background: #ff7b00;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+
+.contact-item{
+    @apply flex flex-col gap-2 bg-white p-6 justify-between rounded-lg mt-8 shadow-lg w-full;
+    strong{
+        @apply text-lg;
+    }
 }
-button:hover {
-    background: #e06b00;
-}
-
-
-
-
-
-
-
-
-@import 'partials/respoPartners';
+@import 'partials/respoWhyKino';
 @import 'partials/footer';

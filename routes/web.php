@@ -16,7 +16,7 @@ Route::get('/why-kino', function () {
 })->name('whykino');
 
 Route::get('/sobre', function () {
-    return view('aboutus');
+    return view('about');
 })->name('aboutus');
 
 Route::get('/explorar', function () {

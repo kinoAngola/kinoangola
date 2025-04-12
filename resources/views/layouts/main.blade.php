@@ -11,6 +11,9 @@
 
 
     <!--==================================== LINKS ====================================-->
+    <!-- Scripts -->
+    @vite(['resources/js/header.js'])
+
     <!-- FAVICON -->
     <link rel="shortcut icon" href="{{ asset('/assets/images/logomarca/Kino Logo (1).png') }}" type="image/x-icon">
 
@@ -48,7 +51,7 @@
 <body class="font-sans antialiased">
 
     {{-- ============================================== HEADER =============================================== --}}
-    <header class="cabecalho">
+    <header class="cabecalho sticky top-0 z-50 w-full">
         <div class="mobile-menu">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -72,10 +75,10 @@
                     <a href="{{ route('partners') }}" class="nav-link">Parceria</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('whykino')}}" class="nav-link">Why Kino?</a>
+                    <a href="{{ route('whykino') }}" class="nav-link">Why Kino?</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('aboutus')}}" class="nav-link">Sobre</a>
+                    <a href="{{ route('aboutus') }}" class="nav-link">Sobre</a>
                 </li>
             </ul>
         </nav>
@@ -106,6 +109,7 @@
                 ​
             @endif
         </div>
+
     </header>
 
 
@@ -271,7 +275,7 @@
 --}}
     <!-- Swiper JS -->
     <script src="{{ asset('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js') }}"></script>
-    <script src="{{asset('https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js')}}"></script>
+    <script src="{{ asset('https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js') }}"></script>
 </body>
 
 </html>

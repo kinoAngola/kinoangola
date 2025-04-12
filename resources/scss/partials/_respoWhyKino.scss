@@ -1,0 +1,31 @@
+@media (max-width:600px) {
+
+    section{
+        margin: 4rem auto 8rem;
+    }
+    .our-history{
+        @apply text-center;
+
+        h2{
+            @apply mb-4;
+        }
+        .content{
+            @apply flex-col gap-20;
+
+            img{
+                @apply w-full;
+            }
+        }
+    }
+
+    .contact-section{
+        margin-bottom: 2rem;
+    }
+    
+    .contact{
+        margin-bottom: 2rem;
+        .contact-item{
+            @apply h-full;
+        }
+    }
+}

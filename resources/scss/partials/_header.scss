@@ -5,7 +5,6 @@ header {
     background-color: $color-white;
     padding: 1rem;
     box-shadow: $box-shadow;
-    @apply sticky top-0 z-50 w-full;
 
     .mobile-menu {
         display: none;
