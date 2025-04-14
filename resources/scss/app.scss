@@ -5,8 +5,6 @@
 
 
 /*======================================== IMPORTS ======================================== */
-/* TIPO DE LETRA */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* OUTROS */
 @import 'partials/vars';
@@ -214,12 +212,14 @@
             height: 100%;
 
             h3 {
-                @apply font-bold text-6xl;
-                color: $color-black;
+                @apply font-extrabold text-5xl;
+                font-family: $family-title;
+                color: $color-black-2;
             }
 
             p {
                 font-weight: $weight-extralight;
+                @apply text-gray-900;
 
                 a {
                     @apply text-orange-500 font-semibold;
@@ -272,15 +272,18 @@
                 font-size: 4rem;
             }
 
-            h3 {
-                color: $color-black-3;
-                font-size: $size-base;
-            }
+            .desc {
+                h3 {
+                    @apply font-semibold;
+                    color: $color-black-3;
+                    font-size: $size-base;
+                }
 
-            p {
-                color: $color-gray-darkness;
-                font-weight: $weight-light;
-                font-size: $size-smallito;
+                p {
+                    color: $color-gray-darkness;
+                    font-weight: $weight-light;
+                    font-size: $size-smallito;
+                }
             }
         }
     }
@@ -322,11 +325,12 @@
                     transition: .4s;
                     border-radius: $radius-second;
 
-                    .icons{
+                    .icons {
                         @apply flex flex-col items-end justify-center top-3 -right-7 transition-all duration-500 z-40 absolute bg-transparent;
 
 
-                        .bx-heart, .bx-cart-alt {
+                        .bx-heart,
+                        .bx-cart-alt {
                             @apply text-xl text-white cursor-pointer font-extralight hover:text-orange-600;
                             transition: .4s;
                         }
@@ -349,7 +353,7 @@
 
                     }
 
-                    &:hover .icons{
+                    &:hover .icons {
                         @apply right-3;
                     }
                 }
@@ -392,54 +396,68 @@
 
 
 /*======================================== EMPRESAS ======================================== */
-.EmpresasSwiper {
-    width: 100%;
-    height: 100%;
-    padding: 2rem 6rem;
-    background-color: $color-white-2;
+
+
+.empresas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 8rem;
+    gap: 3rem;
+
 
     h2 {
         text-align: center;
         align-self: center;
         margin-top: 4rem;
         color: $color-black-2;
+        font-size: $size-biggest;
+        font-weight: $weight-bold;
         text-transform: uppercase;
     }
 
-    .swiper-wrapper{
-        @apply flex flex-row overflow-hidden;
 
-        
-    .swiper-slide {
-        @include FlexBox (center, center, column);
-        text-align: center;
-        font-size: 18px;
-        padding-block: 6rem;
+    .EmpresasSwiper {
+        width: 100%;
+        height: 100%;
+        @apply overflow-x-hidden;
 
-        a {
-            img {
-                width: 150px;
-                border-radius: $radius-around;
-                box-shadow: $shadow-3;
-                padding: 2rem;
-                margin-bottom: 0.5rem;
-                background-color: $color-white;
+        .swiper-wrapper {
+
+
+            .swiper-slide {
+                @apply flex flex-col items-center justify-center;
+
+                .emp-link {
+                    border-radius: 50%;
+                    padding: 1rem;
+                    background-color: #fff;
+                    @include FlexBox (center, center, column);
+                    width: 150px;
+                    height: 150px;
+
+                    img {
+                        width: 90%;
+                        height: 90%;
+                        cursor: pointer;
+
+                        &:hover {
+                            scale: 1.05;
+                        }
+                    }
+                }
+
+                h3 {
+                    @apply mt-2 text-base font-semibold cursor-pointer hover:text-orange-600;
+                    color: $color-black-2;
+                }
+
+                p {
+                    @apply text-gray-500 text-sm;
+                }
             }
         }
-
-        h3 {
-            font-size: $size-large;
-        }
-
-        .info {
-            @include FlexBox(center, center, row);
-
-            p {
-                font-size: $size-smallito;
-                font-weight: $weight-light;
-            }
-        }
-    }
     }
 }
 
@@ -495,14 +513,12 @@
 /*======================================== PESQUISA FILTRADA & MAP ======================================== */
 .filtersearch {
     @extend .container;
-    @include FlexBox(space-between, stretch, row);
-    flex-wrap: wrap;
+    @include FlexBox(start, stretch, column);
     background-color: $color-white;
     gap: 1rem;
 
     h2 {
         width: 100%;
-        flex: 100%;
         margin: auto;
         font-size: $size-x-large;
         text-transform: none;
@@ -514,8 +530,6 @@
 
 
     .search-map {
-        min-width: 400px;
-        flex: 1;
         height: 400px;
         padding: 2rem;
         box-shadow: $shadow-2;
@@ -526,7 +540,6 @@
 
     .content {
         @include FlexBox (center, stretch, column);
-        flex: 1;
         padding: 2rem;
         box-shadow: $shadow-2;
         border-radius: $radius-first;
@@ -656,8 +669,8 @@
 
             .swiper-button-prev,
             .swiper-button-next {
-                
-            @apply text-orange-600 bg-orange-50;
+
+                @apply text-orange-600 bg-orange-50;
                 scale: .37;
                 font-weight: $weight-extrabold;
                 padding: 3rem;
@@ -827,8 +840,8 @@
         max-width: 500px;
 
         h2 {
+            @apply text-6xl font-bold;
             color: $color-black;
-            font-size: $size-super-biggest;
             margin-bottom: 1rem;
         }
 
@@ -843,7 +856,7 @@
     form {
         @include FlexBox(start, stretch, column);
         justify-self: end;
-        width: 400px;
+        min-width: 400px;
         background-color: $color-gray-blue;
         box-shadow: $shadow-2;
         border-radius: $radius-second;

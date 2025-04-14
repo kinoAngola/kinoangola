@@ -1,0 +1,40 @@
+@media (max-width:600px) {
+    main{
+        section{
+            padding-inline: 1rem;
+            margin-inline: 0;
+        }
+    }
+}
+@media (max-width:400px) {
+    main{
+        .faq-section{
+
+            .faq{
+                .faq-list{
+                    li{
+
+                        label{
+                            font-size: $size-base;
+                        }
+
+                        .resposta{
+                            h3{
+                                font-size: $size-base;
+                            }
+
+                            p{
+                                font-size: $size-small;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .container{
+            h5{
+                @apply text-2xl;
+            }}
+    }
+}

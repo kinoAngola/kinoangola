@@ -26,7 +26,10 @@ li {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5 {
     font-family: $family-title;
 }
 
@@ -99,7 +102,7 @@ h2 {
             @include FlexBox(space-between, center, row);
             gap: .35rem;
 
-            
+
             i {
                 padding: 0.5rem;
                 border-radius: $radius-first;
@@ -132,6 +135,13 @@ h2 {
         @include FlexBox(start, center, row);
         gap: 0.5rem;
         margin-left: .5rem;
+
+        a {
+            opacity: .7;
+            font-weight: $weight-semibold;
+            font-size: $size-smallito;
+            @apply hover:underline hover:text-orange-600;
+        }
 
         p {
             opacity: .7;
@@ -197,49 +207,50 @@ h2 {
                 @apply flex flex-row;
             }
         }
+
         .second {
             @include FlexBox (start, center, row);
             @apply mt-2;
-    
+
             .spans {
                 @apply -mt-2;
-    
+
                 span {
                     font-size: .6rem;
                     font-weight: .7rem;
                     border-radius: $radius-second;
                     padding: .3rem .45rem;
                 }
-    
+
                 .pop {
                     color: rgb(126, 0, 126);
                     background-color: rgb(255, 228, 255);
                     @apply transition-all duration-500 cursor-pointer;
-    
+
                     &:hover {
                         color: rgb(255, 228, 255);
                         background-color: rgb(126, 0, 126);
-    
+
                     }
                 }
-    
+
                 .freeshipping {
                     color: $color-green-dark;
                     background-color: $color-green-light;
                     @apply transition-all duration-500 cursor-pointer;
-    
+
                     &:hover {
                         color: $color-green-light;
                         background-color: $color-green-dark;
                     }
                 }
             }
-            
+
         }
 
         .first {
             @apply flex flex-row justify-between items-center;
-            
+
             .avaliacoes {
                 @apply text-yellow-500 flex flex-row items-center text-sm;
 

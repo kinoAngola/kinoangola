@@ -1,3 +1,15 @@
+@media (max-width: 1200px) {
+    .main {
+        .explorartudo {
+            .FoodSwiper {
+                .swiper-botoes {
+                    @apply top-16 mt-1 -right-8;
+                }
+            }
+        }
+    }
+}
+
 
 @media (max-width: 992px) {
     .hero {
@@ -30,6 +42,28 @@
             @apply self-center;
         }
     }
+
+    .main {
+        .content-explorar {
+
+            #title-explore {
+                font-size: $size-large;
+            }
+
+            .other {
+
+                
+            .filter {
+
+                p,
+                i,
+                option {
+                    scale: .85;
+                }
+            }
+            }
+        }
+    }
 }
 
 
@@ -41,9 +75,18 @@
 
 
 @media (max-width: 650px) {
-   
-}
+    .content-explorar {
 
+        form {
+            @apply gap-0;
+
+            .filter {
+                padding: 0.5rem 1rem;
+                font-size: .8rem;
+            }
+        }
+    }
+}
 
 @media (max-width: 600px) {
     .hero {
@@ -51,15 +94,51 @@
     }
 
     .main {
-        padding: 2rem;
+        padding: 1rem;
+
+        
+        .content-explorar{
+            @apply items-start mb-2 mt-8;
+
+            #title-explore{
+                font-size: $size-small;
+                margin: auto 0;
+            }
+
+            .other{
+  .filter{
+                    height: 30px;
+                    p,i,select,option{
+                        font-size: 13px;
+                    }
+                } 
+            }
+        }
 
         .explorartudo {
             .FoodSwiper {
+                
+                h3{
+                    margin-top: 3rem;
+                    margin-bottom: 1rem;
+                    margin-left: 0;
+                }
                 .swiper-wrapper {
+                    @apply relative;
                     padding: 0;
 
                     .swiper-slide {
                         padding: 0;
+                    }
+                }
+
+                .swiper-botoes {
+                    @apply absolute p-0 m-0 top-6 -right-8;
+
+
+                    .swiper-button-prev,
+                    .swiper-button-next {
+                        @apply m-0
                     }
                 }
             }
@@ -73,10 +152,24 @@
         @include FlexBox (center, center, column);
     }
 
+    .main{
+        .content-explorar{
+            #title-explore{
+                font-size: $size-small;
+            }
+            .other{
+                .filter{
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+
+
     .content {
 
         h1 {
-            @apply text-lg;
+            font-size: $size-biggest;
         }
     }
 }

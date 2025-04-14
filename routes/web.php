@@ -35,6 +35,10 @@ Route::get('/company-profile', function () {
     return view('companyProfile');
 })->middleware(['auth', 'verified'])->name('companyProfile');
 
+Route::get('/perfil', function () {
+    return view('customerProfile');
+})->middleware(['auth', 'verified'])->name('customerProfile');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

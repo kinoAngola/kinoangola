@@ -41,14 +41,16 @@ header {
             @include FlexBox (center, center, row);
             color: $color-black;
             transition: $transicao;
+            margin-right: 0.7rem;
 
             i {
-                font-size: 1.35rem;
+                font-size: $size-large;
                 font-weight: $weight-medium;
                 margin-inline: .4rem;
                 border-radius: $radius-around;
                 @include ColorTransition($color-red);
                 transition: $transicao;
+                @apply text-gray-700;
 
                 &:hover {
                     @apply text-orange-600;

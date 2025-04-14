@@ -5,8 +5,6 @@
 
 
 /*======================================== IMPORTS ======================================== */
-/* TIPO DE LETRA */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* OUTROS */
 @import 'partials/vars';
@@ -14,146 +12,284 @@
 @import 'partials/essencial';
 @import 'partials/header';
 
-
-body{
+.container{
+    padding: 0;
+    max-width: 100%;
+}
+body {
     background-color: #e2e2e2;
 }
 
 
 
 section {
-    margin: 40px auto;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 4rem;
+
+    .container{
+        padding: 0 2rem;
+    }
 }
+
 h2 {
     color: #ff7b00;
 }
 
 
 
+.why-section {
+    @apply bg-white;
 
+    .container {
+        
+        .answers {
+            @apply mt-4;
 
+            h3 {
+                @apply mt-4 text-gray-900 font-semibold text-lg;
+            }
 
-.faq {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
+            p {
+                @apply text-gray-700 text-base;
+            }
 
-
-.faq .faq-list {
-    list-style: none;
-}
-
-.faq .faq-list li {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-    border-radius: 10px;
-}
-
-.faq .faq-list li input[type=checkbox] {
-    display: none;
-}
-
-.faq .faq-list label {
-    position: relative;
-    cursor: pointer;
-    font-size: 1.25rem;
-    font-weight: 800;
-    padding: .5rem;
-}
-
-.faq .faq-list label::after{
-    content: '>';
-    position: absolute;
-    top: .5rem;
-    right: .5rem;
-    transform: rotate(90deg);
-    transition: .4s;
-}
-
-
-.faq .faq-list label span {
-    font-size: 1rem;
-    color: #fff;
-    display: inline-block;
-    border-radius: 10px;
-    padding: .35rem .7rem;
-    background-color: #252525;
-    margin-right: 0.5rem;
-}
-
-.faq .faq-list .resposta {
-    background-color: white;
-    padding-inline: 1rem;
-    color: #555555;
-    max-height: 0;
-    overflow: hidden;
-    border-radius: 10px;
-    @apply transition-all duration-700 ease-in;
-
-    h3{
-        padding: 0 1rem .2rem;
-        @apply text-lg font-semibold mt-4 text-gray-800;
+            hr {
+                @apply mt-2;
+            }
+        }
     }
 }
 
-.faq .resposta p{
-    padding: 0 1rem .5rem;
+
+.faq-section {
+    .container {
+        width: 100%;
+
+        .faq-list {
+            @apply mt-8;
+            list-style: none;
+        }
+
+        .faq-list li {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            border-radius: 10px;
+        }
+
+        .faq-list li input[type=checkbox] {
+            display: none;
+        }
+
+        .faq-list label {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.25rem;
+            font-weight: 800;
+            padding: .5rem;
+        }
+
+        .faq-list label::after {
+            content: '>';
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            transform: rotate(90deg);
+            transition: .4s;
+        }
+
+
+        .faq-list label span {
+            font-size: 1rem;
+            color: #fff;
+            display: inline-block;
+            border-radius: 10px;
+            padding: .35rem .7rem;
+            background-color: #252525;
+            margin-right: 0.5rem;
+        }
+
+        .faq-list .resposta {
+            background-color: white;
+            padding-inline: 1rem;
+            color: #555555;
+            max-height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            @apply transition-all duration-700 ease-in;
+
+            h3 {
+                padding: 0 1rem .2rem;
+                @apply text-lg font-semibold mt-4 text-gray-800;
+            }
+
+            hr {
+                margin: .5rem auto .5rem;
+            }
+        }
+
+        .resposta p {
+            padding: 0 1rem .5rem;
+        }
+
+
+        input[type=checkbox]:checked+label+.resposta {
+            max-height: 1000px;
+            padding-top: 0 .5rem 1rem;
+        }
+
+        input[type=checkbox]:checked+label span {
+            background-color: rgb(102, 102, 102);
+        }
+
+        input[type=checkbox]:checked+label::after {
+            transform: rotate(-90deg);
+        }
+
+
+
+    }
+}
+
+/* Guia do Usuário */
+.guide-section {
+    background-color: #fff;
+
+    .container {
+
+        h2 {
+            margin-bottom: 2rem;
+        }
+
+
+        p {
+            @apply mt-8 font-semibold text-lg;
+        }
+
+        ol {
+            margin-top: 1rem;
+            padding-left: 20px;
+
+            li {
+                @apply list-decimal;
+                margin-bottom: 1rem;
+
+                a{
+                    @apply text-orange-600 font-medium transition-all duration-500 hover:underline;
+                }
+            }
+        }
+
+    }
 }
 
 
-.faq input[type=checkbox]:checked + label + .resposta{
-    max-height: 1000px;
-    padding-top: 0 .5rem 1rem;
+/* Suporte */
+.support-section {
+
+    .container {
+        padding: 4rem;
+        @apply bg-white w-full rounded-lg;
+
+        .content {
+            @apply grid gap-2 justify-start items-center grid-cols-2 mt-12 w-full;
+
+            form {
+                @apply bg-gray-100 p-8 rounded-lg w-full;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                label {
+                    font-weight: bold;
+                }
+
+                input,
+                textarea {
+                    padding: 0.5rem;
+                    font-size: 1rem;
+                    border-radius: 8px;
+                    border: 1px solid #ccc;
+                }
+
+                button {
+                    background-color: #ff7b00;
+                    color: white;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                }
+            }
+
+            img {
+                width: 70%;
+            }
+        }
+    }
 }
 
-.faq input[type=checkbox]:checked + label span{
-    background-color: rgb(102, 102, 102);
-}
 
-.faq input[type=checkbox]:checked + label::after{
-    transform: rotate(-90deg);
-}
+/* Termos e Privacidade */
+.terms-section {
+    background-color: #fff;
 
+    .container {
+        padding-block: 2rem;
 
+        a {
+            color: #ff7b00;
+            text-decoration: none;
 
-
-
-
-.features, .values, .testimonials, .cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.feature-item, .value-item, .testimonial-item, .cta-box {
-    flex: 1 1 300px;
-    padding: 20px;
-    background: #f1f1f1;
-    border-radius: 8px;
-    text-align: center;
-}
-button {
-    padding: 10px;
-    background: #ff7b00;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-button:hover {
-    background: #e06b00;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 
+.cta {
+    padding-inline: 0;
+    padding-bottom: 0;
+    .container {
+        
+        @apply w-full text-center text-gray-900 bg-white sm:p-8;
 
+        h5 {
+            @apply mb-2 text-3xl font-bold text-gray-900;
+        }
 
+        .text-above {
+            @apply mb-5 text-base text-gray-500 sm:text-lg;
+        }
 
+        .cta-item {
+            @apply items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse;
+
+            .cta-link {
+                @apply w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5;
+
+                .icon {
+                    @apply me-3 w-7 h-7;
+                }
+
+                .content {
+                    @apply text-left rtl:text-right;
+
+                    .cta-app {
+                        @apply -mt-1 font-sans text-sm font-semibold text-white;
+                    }
+                }
+            }
+        }
+    }
+
+    #baixar-app{
+        padding: 4rem;
+    }
+}
 
 
 

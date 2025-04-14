@@ -179,8 +179,20 @@
 }
 
 @media (max-width: 860px) {
+
+    .destaque {
+        .content {
+            .desc {
+
+                h3 {
+                    @apply text-3xl;
+                }
+            }
+        }
+    }
+
     .food {
-        padding: 0;
+        padding-inline: 1rem;
 
         .FoodSwiper {
             padding-inline: 0;
@@ -201,6 +213,18 @@
                             width: 100%;
                         }
                     }
+                }
+            }
+
+
+
+            .swiper-botoes {
+                @apply block border p-0 m-0 -top-6 -right-4;
+
+
+                .swiper-button-prev,
+                .swiper-button-next {
+                    @apply m-0
                 }
             }
         }
@@ -427,7 +451,7 @@
 
                     .card-pratos {
 
-                        max-width: 250px;
+                        max-width: 400px;
                         scale: 1;
 
                         img {
@@ -436,6 +460,7 @@
                     }
                 }
             }
+
         }
     }
 
@@ -542,6 +567,31 @@
                     font-size: 3.5rem;
                 }
             }
+        }
+    }
+
+    .food {
+        padding-inline: 0;
+
+        .FoodSwiper {
+            padding-inline: 0;
+
+            .swiper-wrapper {
+                padding: 0;
+
+                .swiper-slide {
+
+                    .card-pratos {
+                        width: 90%;
+                        scale: 1;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
         }
     }
 
@@ -691,6 +741,7 @@
         }
 
         form {
+            min-width: 270px;
             width: 100%;
             padding: 1rem;
         }
@@ -725,8 +776,14 @@
 
 
     .food {
+        padding-inline: 0;
+
         .FoodSwiper {
+            padding-inline: 0;
+
             .swiper-wrapper {
+                padding-inline: 0;
+
                 .swiper-slide {
 
                     .card-pratos {

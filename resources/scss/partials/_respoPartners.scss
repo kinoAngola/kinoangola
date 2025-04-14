@@ -1,14 +1,14 @@
 @media (max-width:1150px) {
 
-    #benefits{
+    #benefits {
         padding: 0;
 
-        .benefit-item{
-            .right{
+        .benefit-item {
+            .right {
                 margin: 0;
             }
 
-            .left{
+            .left {
                 margin: 0;
             }
 
@@ -17,77 +17,148 @@
 }
 
 
-@media (max-width:992px){
-    .benefit-item{
-        img{
+@media (max-width:992px) {
+    .benefit-item {
+        img {
             max-width: 250px;
             max-height: 250px;
         }
     }
 }
 
-@media (max-width:840px){
-    .benefit-item{
+@media (max-width:840px) {
+    .benefit-item {
         @include FlexBox (center, center, column);
         text-align: center;
 
-        img{
+        img {
             max-width: 300px;
             max-height: 300px;
         }
 
-        h2,p{
-        text-align: center;
+        h2,
+        p {
+            text-align: center;
         }
     }
 }
 
-@media (max-width:840px){
-    .benefit-item{
+@media (max-width:840px) {
+    .benefit-item {
         @include FlexBox (center, center, column);
         text-align: center;
 
-        img{
+        img {
             max-width: 300px;
             max-height: 300px;
         }
 
-        h2,p{
-        text-align: center;
+        h2,
+        p {
+            text-align: center;
         }
     }
 }
 
 
-@media (max-width:600px){
-    
-    h1{
+@media (max-width:600px) {
+
+    h1 {
         padding-inline: 1rem;
     }
-        #benefits{
-            .benefit-item{
-                padding-inline: 32px;
-            }
+
+    #benefits {
+        .benefit-item {
+            padding-inline: 32px;
         }
     }
 
 
-@media (max-width:480px){
-    .benefit-item{
+    #testimonials {
+        .swiper {
+            .swiper-wrapper {
+                .swiper-slide {
+                    padding: 1rem;
+                    @apply flex justify-center;
 
-        img{
-            max-width: 270px;
-            max-height: 270px;
+                    .content {
+                        width: 90%;
+                        max-width: 400px;
+
+                    }
+                }
+            }
         }
+    }
+}
 
-        .content{
-            h2{
-                font-size: 2rem;
-                padding-inline: 1rem;
+
+
+
+@media (max-width:480px) {
+
+    h1 {
+        @apply text-3xl;
+    }
+
+    #benefits {
+
+        .benefit-item {
+            padding-inline: 1rem;
+
+            img {
+                max-width: 270px;
+                max-height: 270px;
             }
 
-            p{
-                padding-inline: 1rem;
+            .content {
+                width: 100%;
+                @apply items-center;
+
+                h2 {
+                    width: 90%;
+                    margin-inline: 0;
+                    font-size: 2rem;
+                    padding-inline: 0;
+                }
+
+                p {
+                    margin-inline: 0;
+                    padding-inline: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    #testimonials {
+        .swiper {
+            .swiper-wrapper {
+                width: 100%;
+                .swiper-slide {
+                    width: 100%;
+                    .content {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:360px) {
+    #testimonials {
+        .swiper {
+            .swiper-wrapper {
+                .swiper-slide {
+                    .content {
+                        scale: .9;
+                        width: 90%;
+                        max-width: 300px;
+
+                    }
+                }
             }
         }
     }

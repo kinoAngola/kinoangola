@@ -88,11 +88,42 @@
             @if (Route::has('login'))
 
                 @auth
-                    <a href="resources/views/cart.html" class="link-extra">
-                        <i class='bx bx-cart-alt'></i>
-                        <span>+99</span></a>
-                    <a href="{{ route('companyProfile') }}" class="link-extra"><i class='bx bx-user-circle'></i></a>
-                    <a href="{{ url('/dashboard') }}" class="link-extra"><i class='bx bxs-dashboard'></i></a>
+
+                {{-- CART --}}
+
+                <a href="resources/views/cart.html" class="link-extra">
+                    <i class='bx bx-cart-alt'></i>
+                    <span>+99</span></a>
+                    
+                    <!-- Settings Dropdown -->
+                        <x-dropdown align="right" width="48" class="text-left">
+                            <x-slot name="trigger" class="flex justify-start flex-row text-left">
+                                <button class="flex flex-row justify-start text-left"
+                                    class="text-xl bg-transparent">    
+                                    <div class="text-left flex flex-row justify-start items-center"><i class='bx bx-user-circle duration-500 transition-all text-gray-700 hover:text-orange-600 text-left justify-self-start self-center text-xl'></i></div>
+                                </button>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <x-dropdown-link :href="route('customerProfile')">
+                                    {{ __('Profile') }}
+                                </x-dropdown-link>
+
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </form>
+                            </x-slot>
+                        </x-dropdown>
+                    {{-- <a href="{{ url('/dashboard') }}" class="link-extra"><i class='bx bxs-dashboard'></i></a> --}}
+
+                    
                 @else
                     <a class="btn-principal" href="{{ route('login') }}">
                         {{ __('Login') }}
@@ -135,35 +166,50 @@
                 </div>
                 <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Empresa</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li class="mb-4">
-                                <a href="{{ route('home') }}" class="hover:underline capitalize">KINO ANGOLA</a>
+                                <a href="{{ route('home') }}" class="hover:underline capitalize">Nossa História</a>
                             </li>
                             <li>
-                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                                <a href="https://tailwindcss.com/" class="hover:underline">Missão, Visão e Valores</a>
+                            </li>
+                            <li>
+                                <a href="https://tailwindcss.com/" class="hover:underline">Equipe</a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Ajuda</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li class="mb-4">
-                                <a href="https://github.com/kinoAngola" class="hover:underline ">Github</a>
+                                <a href="https://github.com/kinoAngola" class="hover:underline ">Suporte ao Cliente</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="https://github.com/kinoAngola" class="hover:underline ">Guia do Usuário</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="https://github.com/kinoAngola" class="hover:underline ">Perguntas Frequentes</a>
                             </li>
                             <li>
-                                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Terms &amp; Conditions</a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Conecta-se</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li>
+                                <a href="https://tailwindcss.com/" class="hover:underline">Parceiros</a>
+                            </li>
                             <li class="mb-4">
-                                <a href="#" class="hover:underline">Privacy Policy</a>
+                                <a href="#" class="hover:underline">Eventos</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Eventos e Promoções</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                                <a href="#" class="hover:underline">kinoangola@gmail.com</a>
                             </li>
                         </ul>
                     </div>

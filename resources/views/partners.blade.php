@@ -12,7 +12,7 @@
 
     <section id="benefits">
         <div class="pt-16"></div>
-        <h1 class="title pt-14">Vantagens de ser um(a) Kino Partner</h1>
+        <h1 class="title pt-8">Vantagens de ser um(a) Kino Partner</h1>
         <div class="benefit-item">
             <img src="{{asset('assets/images/vetc (1).jpg')}}" alt="">
             <div class="content right">
@@ -56,10 +56,11 @@
         <!-- Swiper -->
         <div class="swiper testimonials-partners">
             <div class="swiper-wrapper">
+                
                 <div class="swiper-slide">
                     <div class="content">
                         <div class="person">
-                            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                            <img src="{{asset('https://swiperjs.com/demos/images/nature-1.jpg')}}" />
                             <div class="details">
                                 <h3>Nome Do Parceiro</h3>
                                 <p>@username</p>
@@ -77,10 +78,11 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="swiper-slide">
                     <div class="content">
                         <div class="person">
-                            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                            <img src="{{asset('https://swiperjs.com/demos/images/nature-1.jpg')}}" />
                             <div class="details">
                                 <h3>Nome Do Parceiro</h3>
                                 <p>@username</p>
@@ -98,10 +100,11 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="swiper-slide">
                     <div class="content">
                         <div class="person">
-                            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                            <img src="{{asset('https://swiperjs.com/demos/images/nature-1.jpg')}}" />
                             <div class="details">
                                 <h3>Nome Do Parceiro</h3>
                                 <p>@username</p>
@@ -119,10 +122,11 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="swiper-slide">
                     <div class="content">
                         <div class="person">
-                            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                            <img src="{{asset('https://swiperjs.com/demos/images/nature-1.jpg')}}" />
                             <div class="details">
                                 <h3>Nome Do Parceiro</h3>
                                 <p>@username</p>
@@ -140,10 +144,11 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="swiper-slide">
                     <div class="content">
                         <div class="person">
-                            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                            <img src="{{asset('https://swiperjs.com/demos/images/nature-1.jpg')}}" />
                             <div class="details">
                                 <h3>Nome Do Parceiro</h3>
                                 <p>@username</p>
@@ -161,10 +166,11 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="swiper-slide">
                     <div class="content">
                         <div class="person">
-                            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                            <img src="{{asset('https://swiperjs.com/demos/images/nature-1.jpg')}}" />
                             <div class="details">
                                 <h3>Nome Do Parceiro</h3>
                                 <p>@username</p>
@@ -182,6 +188,29 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="swiper-slide">
+                    <div class="content">
+                        <div class="person">
+                            <img src="{{asset('https://swiperjs.com/demos/images/nature-1.jpg')}}" />
+                            <div class="details">
+                                <h3>Nome Do Parceiro</h3>
+                                <p>@username</p>
+                            </div>
+                        </div>
+                        <div class="comments">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt
+                            blanditiis optio sunt aliquid suscipit reiciendis recusandae nobis perferendis nemo
+                        </div>
+                        <div class="avs">
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                            <i class='bx bxs-star' ></i>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="swiper-pagination"></div>
         </div>

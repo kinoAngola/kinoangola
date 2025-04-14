@@ -108,29 +108,76 @@ var FoodSwiper = new Swiper(".FoodSwiper", {
 
 
 /*======================================== EMPRESAS ======================================== */
-var EmpSwiper = new Swiper(".EmpresasSwiper", {
-  slidesPerView: 1,
+/* var EmpSwiper = new Swiper(".EmpresasSwiper", {
+  slidesPerView: 3,
   spaceBetween: 10,
   loop: true,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
   autoplay: {
-    delay: 3400,
+    delay: 7000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 25,
+    },
+    850: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+    },
+    1350: {
+      slidesPerView: 4,
+      spaceBetween: 25,
+    },
+    1600: {
+      slidesPerView: 5,
+      spaceBetween: 25,
+    },
+    2150: {
+      slidesPerView: 6,
+      spaceBetween: 25,
+    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+}); */
+
+var swiper = new Swiper(".EmpresasSwiper", {
+  loop:true,
+  centeredSlides:true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },autoplay: {
+    delay: 2500,
     disableOnInteraction: false,
   },
   breakpoints: {
     640: {
       slidesPerView: 2,
-      spaceBetween: 20,
+      spaceBetween: 30,
+      centeredSlides:false,
     },
     768: {
-      slidesPerView: 4,
-      spaceBetween: 40,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      centeredSlides:true,
     },
     1024: {
-      slidesPerView: 5,
-      spaceBetween: 50,
+      slidesPerView: 4,
+      spaceBetween: 30,
+      centeredSlides:false,
     },
   },
 });
+
 document.querySelectorAll('.EmpresasSwiper .swiper-slide').forEach(slide => {
   slide.addEventListener('mouseenter', function () {
     EmpSwiper.autoplay.stop(); // Para a animação ao passar o mouse

@@ -117,3 +117,48 @@ filtros_.addEventListener('mouseenter', function () {
 function abrirSide() {
   sidebar_.style.transform = 'translateX(0%)';
 }
+
+
+
+
+/*======================================== EMPRESAS ======================================== */
+var EmpresasSwiper = new Swiper(".EmpresasSwiper", {
+  loop:true,
+  centeredSlides:true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      centeredSlides:false,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      centeredSlides:true,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      centeredSlides:false,
+    },
+  },
+});
+
+document.querySelectorAll('.EmpresasSwiper .swiper-wrapper .swiper-slide').forEach(function (slide) {
+  slide.addEventListener('mouseenter', function () {
+    EmpresasSwiper.autoplay.stop();
+  });
+
+  // Retoma o autoplay quando o mouse sair do swiper-slide
+  slide.addEventListener('mouseleave', function () {
+    EmpresasSwiper.autoplay.start();
+  });
+});
+

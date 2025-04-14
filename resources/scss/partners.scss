@@ -5,8 +5,6 @@
 
 
 /*======================================== IMPORTS ======================================== */
-/* TIPO DE LETRA */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* OUTROS */
 @import 'partials/vars';
@@ -59,6 +57,12 @@ h1 {
     padding: 4rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    h2{
+        @apply text-4xl font-bold;
+        color: $color-black-2;
+    }
 }
 
 .benefit-item img {
@@ -85,12 +89,12 @@ h1 {
 
 .benefit-item .right h2,
 .benefit-item .left h2 {
-    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .benefit-item .right p,
 .benefit-item .left p {
+    color: $color-black-3;
     font-weight: 200;
     font-size: large;
 }
@@ -108,10 +112,17 @@ form {
     }
 }
 
+#testimonials{
+    h1{
+        margin-top: 2rem;
+    }
+}
+
 #signup{
     background-color: #f1f1f1;
     h1{
-        padding: 4rem auto 0;
+        padding: 4rem auto;
+        margin: 2rem 0rem 2rem;
     }
 
     #signup-form{
@@ -178,7 +189,12 @@ form {
     color: rgb(255, 200, 0);
 }
 
+.swiper{
 
+    .swiper-pagination-bullet{
+        @apply bg-orange-600;
+    }
+}
 
 @import 'partials/respoPartners';
 @import 'partials/footer';

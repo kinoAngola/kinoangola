@@ -5,8 +5,6 @@
 
 
 /*======================================== IMPORTS ======================================== */
-/* TIPO DE LETRA */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* OUTROS */
 @import 'partials/vars';
@@ -27,7 +25,7 @@
         gap: 1.5rem;
 
         h1 {
-            font-size: 4rem;
+            @apply text-5xl font-bold;
         }
 
         p {
@@ -50,24 +48,26 @@
     position: relative;
     padding: 6rem;
 
-    
-.sidebar{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 300px;
-    background-color: #ccc;
-    transform: translateX(100%);
-    z-index: 50;
-}
+
+    .sidebar {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 300px;
+        background-color: #ccc;
+        transform: translateX(100%);
+        z-index: 50;
+    }
 
     .content-explorar {
-        @apply flex flex-col justify-start w-full gap-10 items-end;
+        @apply flex flex-row justify-between w-full items-center mb-10;
 
         h3 {
-            @apply self-start;
-            font-size: $size-big;
+            @apply text-gray-500;
+            margin-left: 1rem;
+            font-size: $size-x-large;
             font-weight: $weight-bold;
         }
 
@@ -79,23 +79,28 @@
                 @apply border border-orange-600 cursor-pointer font-medium text-orange-400 transition-all duration-500 hover:text-white hover:bg-orange-600;
                 padding: 0.7rem;
                 border-radius: $radius-second;
-
-                p {
-                    font-size: $size-smallito;
-                }
+                height: 45px;
 
             }
 
-            .filtros{
+            .filtros {
                 @apply flex flex-row justify-between items-center gap-2;
             }
 
-            #seletar{
+            #seletar {
                 @apply bg-gray-50 text-orange-600 transition-all duration-500 hover:text-white hover:bg-orange-600;
-                font-size: $size-smallito;
 
-                option{
+                option {
                     @apply border-b border-gray-300 bg-gray-50 text-gray-900;
+                }
+            }
+
+            .filter {
+
+                p,
+                i,
+                option {
+                    font-size: 16px;
                 }
             }
         }
@@ -107,14 +112,18 @@
 
 
         .FoodSwiper {
-            h2 {
-                font-size: $size-big;
+            h3 {
+                @apply text-gray-800;
+                font-size: $size-biggest;
+                font-weight: $weight-semibold;
+                margin-top: 4rem;
+                margin-left: 1rem;
             }
 
             .swiper-wrapper {
                 @apply shadow-none;
                 padding-inline: 1rem;
-                padding-top: 4rem;
+                padding-top: 1rem;
 
                 .swiper-slide {
                     @apply relative shadow-none;
@@ -128,12 +137,12 @@
                         border-radius: $radius-second;
 
                         .icons {
-                            @apply flex flex-col items-end justify-center top-3 -right-7 transition-all duration-500 z-40 absolute bg-transparent;
+                            @apply flex flex-col items-end justify-center top-3 -left-7 transition-all duration-500 z-40 absolute bg-transparent;
 
 
                             .bx-heart,
                             .bx-cart-alt {
-                                @apply text-xl text-white cursor-pointer font-extralight hover:text-orange-600;
+                                @apply text-2xl text-white cursor-pointer font-extralight hover:text-orange-600;
                                 transition: .4s;
                             }
                         }
@@ -156,7 +165,7 @@
                         }
 
                         &:hover .icons {
-                            @apply right-3;
+                            @apply left-4;
                         }
                     }
                 }
@@ -192,6 +201,77 @@
         }
 
     }
+
+    /*======================================== EMPRESAS ======================================== */
+
+
+    .empresas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 6rem 0 2rem;
+        padding: 4rem;
+        background-color: #fff;
+        box-shadow: $box-shadow;
+        border-radius: 15px;
+        gap: 3rem;
+
+
+        h2 {
+            text-align: center;
+            align-self: center;
+            color: $color-black-2;
+            font-size: $size-biggest;
+            font-weight: $weight-bold;
+            text-transform: uppercase;
+        }
+
+
+        .EmpresasSwiper {
+            width: 100%;
+            height: 100%;
+            @apply overflow-x-hidden;
+
+            .swiper-wrapper {
+
+
+                .swiper-slide {
+                    @apply flex flex-col items-center justify-center;
+
+                    .emp-link {
+                        border-radius: 50%;
+                        padding: 1rem;
+                        background-color: #fff;
+                        @include FlexBox (center, center, column);
+                        width: 150px;
+                        height: 150px;
+                        @apply border-4 border-orange-500 rounded-full transition-all duration-500 ease-in-out;
+
+                        img {
+                            width: 90%;
+                            height: 90%;
+                            cursor: pointer;
+
+                            &:hover {
+                                scale: .95;
+                            }
+                        }
+                    }
+
+                    h3 {
+                        @apply mt-2 text-base font-semibold cursor-pointer hover:text-orange-600;
+                        color: $color-black-2;
+                    }
+
+                    p {
+                        @apply text-gray-500 text-sm;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 
