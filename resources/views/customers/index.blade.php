@@ -2,109 +2,39 @@
 
 @section('links-head')
     <!-- Scripts -->
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+    @vite(['resources/scss/customerProfile.scss', 'resources/js/customerProfile.js'])
 @endsection
 
 @section('content')
-    <!-- Página de Perfil do Usuário -->
-    <section class="max-w-6xl mx-auto p-6 space-y-10">
-        <!-- Informações do Perfil -->
-        <!-- Perfil -->
-        <div class="bg-white shadow-xl rounded-2xl p-6 max-w-lg mx-auto mt-8">
-            <div class="relative text-center">
-                <!-- Foto de Perfil -->
-                <img src="https://via.placeholder.com/150" alt="Foto de Perfil"
-                    class="w-40 h-40 rounded-full object-cover mx-auto border-4 border-white shadow-xl">
+    <section class="customerProfile">
 
-                <!-- Botão de Editar Foto -->
-                <button class="absolute bottom-2 right-2 bg-blue-600 text-white px-3 py-2 rounded-full hover:bg-blue-700">
-                    <i class="bx bx-camera"></i> Alterar Foto
-                </button>
+        <div class="info-profile">
+            <div class="text-center flex justify-center">
+                @if (Auth::user()->image)
+                    <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="Foto de Perfil"
+                        class="w-60 h-60 border border-2 rounded-full object-cover border-4 border-white shadow-xl">
+                @else
+                    <img src="{{ asset('storage/images/profiles/userdefault.png') }}" alt="Imagem de Perfil Padrão"
+                        class="w-60 h-60 rounded-full">
+                @endif
             </div>
 
             <!-- Informações do Usuário -->
             <div class="mt-6 text-center">
-                <h2 class="text-2xl font-bold text-gray-800">João Silva</h2>
-                <p class="text-gray-600">joao@email.com</p>
+                <h2 class="text-2xl font-bold text-gray-800">{{ Auth::user()->name }}</h2>
+                <p class="text-gray-600">{{ Auth::user()->email }}</p>
                 <p class="text-gray-600">Telefone: (11) 98765-4321</p>
                 <p class="text-gray-600">Localização: São Paulo, SP</p>
             </div>
 
-            <!-- Botões -->
+
             <div class="mt-6 flex justify-center gap-6">
-                <button class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700">Editar Perfil</button>
-                <button class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700">Redefinir Senha</button>
+                <a href="{{route('customer.edit')}}" class="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700">Editar Perfil</a>
+                <button class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700">Eliminar Conta</button>
             </div>
 
-            <!-- Botão Carrinho -->
-            <div class="absolute top-0 right-0 m-4">
-                <button id="open-cart" class="bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700">
-                    <i class="bx bx-cart"></i> Carrinho
-                </button>
-            </div>
-        </div>
 
 
-
-
-
-        <!-- Editar Perfil -->
-        <div class="bg-white shadow-xl rounded-2xl p-6">
-
-
-
-            <h2 class="text-3xl font-bold mb-6">Editar Perfil</h2>
-
-            <!-- Foto de Perfil -->
-            <div class="flex items-center gap-4 mb-6">
-                <img src="https://via.placeholder.com/150" alt="Foto de Perfil" class="w-24 h-24 rounded-full object-cover">
-                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Alterar Foto</button>
-            </div>
-
-            <!-- Formulário de Informações -->
-            <form>
-                <div class="grid md:grid-cols-2 gap-4 mb-6">
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Nome</label>
-                        <input type="text" value="João Silva" class="w-full border rounded px-3 py-2">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Email</label>
-                        <input type="email" value="joao@email.com" class="w-full border rounded px-3 py-2">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Telefone</label>
-                        <input type="tel" value="(11) 98765-4321" class="w-full border rounded px-3 py-2">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Localização</label>
-                        <input type="text" value="São Paulo, SP" class="w-full border rounded px-3 py-2">
-                    </div>
-                </div>
-
-                <!-- Seção de Redefinir Senha -->
-                <div class="mb-6">
-                    <h3 class="text-lg font-semibold mb-4">Redefinir Senha</h3>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Nova Senha</label>
-                            <input type="password" placeholder="Digite a nova senha"
-                                class="w-full border rounded px-3 py-2">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Confirmar Senha</label>
-                            <input type="password" placeholder="Confirme a nova senha"
-                                class="w-full border rounded px-3 py-2">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Botão para Atualizar -->
-                <div class="flex gap-4 mt-6">
-                    <button type="submit" class="bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700">Atualizar
-                        Informações</button>
-                </div>
-            </form>
         </div>
 
 
@@ -251,52 +181,100 @@
                 </table>
             </div>
         </div>
-        {{-- 
 
-<!-- Lista de Pedidos -->
-    <div class="bg-white shadow-xl rounded-2xl p-6">
-      <h2 class="text-2xl font-bold mb-4">Meus Pedidos</h2>
-      <div class="space-y-4">
-        <div class="border p-4 rounded shadow">
-          <div class="flex justify-between">
-            <div>
-              <p><strong>Pedido #00123</strong> — Calulu de Peixe</p>
-              <p class="text-sm text-gray-600">Status: Confirmado</p>
-            </div>
-            <div class="flex gap-2">
-              <button class="text-blue-600 hover:underline">Editar</button>
-              <button class="text-red-600 hover:underline">Apagar</button>
-            </div>
-          </div>
-        </div>
-        <div class="border p-4 rounded shadow">
-          <div class="flex justify-between">
-            <div>
-              <p><strong>Pedido #00124</strong> — Muamba de Galinha</p>
-              <p class="text-sm text-gray-600">Status: A Caminho</p>
-            </div>
-            <div class="flex gap-2">
-              <button class="text-blue-600 hover:underline">Editar</button>
-              <button class="text-red-600 hover:underline">Apagar</button>
-            </div>
-          </div>
-        </div>
-        <div class="border p-4 rounded shadow">
-          <div class="flex justify-between">
-            <div>
-              <p><strong>Pedido #00125</strong> — Funge de Carne</p>
-              <p class="text-sm text-gray-600">Status: Cancelado</p>
-            </div>
-            <div class="flex gap-2">
-              <button class="text-blue-600 hover:underline">Editar</button>
-              <button class="text-red-600 hover:underline">Apagar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
---}}
+        <!-- Lista de Pedidos -->
+        <div class="bg-white shadow-xl rounded-2xl p-6">
+            <h2 class="text-2xl font-bold mb-4">Meusss Pedidos</h2>
+            <div class="space-y-4">
+
+                <div class="border p-4 rounded shadow">
+                    <div class="flex justify-between">
+                        <div class="flex gap-2">
+                            <img src="{{ asset('/assets/images/qd (6).png') }}" class="w-20 h-20" alt="">
+                            <div class="info">
+                                <p><strong>Pedido #00123</strong> — Calulu de Peixe</p>
+                                <p class="text-sm text-gray-600">Estabelecimento: <a href="{{ route('companyProfile') }}"
+                                        class="text-orange-600 font-semibold hover:underline">La Plaza</a></p>
+                                <p class="text-sm text-gray-600 mt-2">Status: <span
+                                        class="text-green-600 px-2 py-1 bg-green-100 rounded-full text-sm font-semibold">Confirmado</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="text-blue-600 hover:underline">Editar</button>
+                            <button class="text-red-600 hover:underline">Apagar</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border p-4 rounded shadow">
+                    <div class="flex justify-between">
+                        <div class="flex gap-2">
+                            <img src="{{ asset('/assets/images/qd (6).png') }}" class="w-20 h-20" alt="">
+                            <div class="info">
+                                <p><strong>Pedido #00123</strong> — Calulu de Peixe</p>
+                                <p class="text-sm text-gray-600">Estabelecimento: <a href="{{ route('companyProfile') }}"
+                                        class="text-orange-600 font-semibold hover:underline">La Plaza</a></p>
+                                <p class="text-sm text-gray-600 mt-2">Status: <span
+                                        class="text-green-600 px-2 py-1 bg-green-100 rounded-full text-sm font-semibold">Confirmado</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="text-blue-600 hover:underline">Editar</button>
+                            <button class="text-red-600 hover:underline">Apagar</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border p-4 rounded shadow">
+                    <div class="flex justify-between">
+                        <div class="flex gap-2">
+                            <img src="{{ asset('/assets/images/qd (6).png') }}" class="w-20 h-20" alt="">
+                            <div class="info">
+                                <p><strong>Pedido #00123</strong> — Calulu de Peixe</p>
+                                <p class="text-sm text-gray-600">Estabelecimento: <a href="{{ route('companyProfile') }}"
+                                        class="text-orange-600 font-semibold hover:underline">La Plaza</a></p>
+                                <p class="text-sm text-gray-600 mt-2">Status: <span
+                                        class="text-yellow-600 px-2 py-1 bg-yellow-100 rounded-full text-sm font-semibold">Pendente</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="text-blue-600 hover:underline">Editar</button>
+                            <button class="text-red-600 hover:underline">Apagar</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="border p-4 rounded shadow">
+                    <div class="flex justify-between">
+                        <div class="flex gap-2">
+                            <img src="{{ asset('/assets/images/qd (6).png') }}" class="w-20 h-20" alt="">
+                            <div class="info">
+                                <p><strong>Pedido #00123</strong> — Calulu de Peixe</p>
+                                <p class="text-sm text-gray-600">Estabelecimento: <a href="{{ route('companyProfile') }}"
+                                        class="text-orange-600 font-semibold hover:underline">La Plaza</a></p>
+                                <p class="text-sm text-gray-600 mt-2">Status: <span
+                                        class="text-red-600 px-2 py-1 bg-red-100 rounded-full text-sm font-semibold">Cancelado</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="text-blue-600 hover:underline">Editar</button>
+                            <button class="text-red-600 hover:underline">Apagar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
 
 
 

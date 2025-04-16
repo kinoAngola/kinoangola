@@ -1,30 +1,60 @@
+@media (max-width:992px) {
+    main {
+        .support-section {
+            .container {
+                .content {
+                    @apply grid-cols-1 items-center;
+                    max-width: 500px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width:600px) {
-    main{
-        section{
+    main {
+        section {
             padding-inline: 1rem;
             margin-inline: 0;
         }
     }
 }
-@media (max-width:400px) {
-    main{
-        .faq-section{
 
-            .faq{
-                .faq-list{
-                    li{
+@media (max-width:480px) {
+    main {
 
-                        label{
-                            font-size: $size-base;
-                        }
+        section {
+            padding: 1rem;
+            margin-inline: 0;
+        }
 
-                        .resposta{
-                            h3{
+        .why-section,
+        .guide-section {
+            .container {
+                padding-inline: 0;
+            }
+        }
+
+        .faq-section {
+            .container {
+                padding-inline: 0;
+
+                .faq {
+                    .faq-list {
+                        li {
+
+                            label {
                                 font-size: $size-base;
                             }
 
-                            p{
-                                font-size: $size-small;
+                            .resposta {
+                                h3 {
+                                    font-size: $size-base;
+                                }
+
+                                p {
+                                    font-size: $size-small;
+                                }
                             }
                         }
                     }
@@ -32,9 +62,58 @@
             }
         }
 
-        .container{
-            h5{
-                @apply text-2xl;
-            }}
+        .support-section {
+            .container {
+                padding: 2rem;
+            }
+        }
+
+        .terms-section,
+        .cta,
+        .container {
+            .container {
+                padding: 2rem;
+            }
+        }
+
+        
+        .support-section {
+
+            .container {
+
+                .content{
+                    form{
+                        padding: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 414px) {
+
+    main {
+        .support-section {
+            padding: 1rem 0;
+
+            .container {
+                @apply rounded-none;
+                padding: 16px;
+            }
+        }
+
+        .terms-section {
+            padding: 0;
+        }
+
+        .cta {
+            padding-inline: 0;
+
+            #baixar-app,
+            .container {
+                padding: 1px;
+            }
+        }
     }
 }

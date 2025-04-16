@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/*======================================== IMPORTS ======================================== */
+
+/* OUTROS */
+@import 'partials/vars';
+@import 'partials/mixins';
+@import 'partials/essencial';
+@import 'partials/header';
+
+section{
+    .info-profile{
+        padding: 2rem;
+
+        img{
+            @apply border;
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+@import 'partials/respoCustomer';
+@import 'partials/footer';

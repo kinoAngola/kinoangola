@@ -193,7 +193,7 @@ h2 {
         @apply bg-white w-full rounded-lg;
 
         .content {
-            @apply grid gap-2 justify-start items-center grid-cols-2 mt-12 w-full;
+            @apply grid gap-2 grid-cols-2 mt-12 w-full mx-auto justify-items-center;
 
             form {
                 @apply bg-gray-100 p-8 rounded-lg w-full;
