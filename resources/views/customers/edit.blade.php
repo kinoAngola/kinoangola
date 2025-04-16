@@ -17,12 +17,21 @@
             <h2 class="text-3xl font-bold mb-6">Editar Perfil</h2>
 
             <!-- Formulário de Informações -->
-            <form>
+            <form action="{{route('customer.edit')}}" method="post">
+                @csrf
+                @method('PUT')
+
+                <div class="mb-4">
+                    <label for="image" class="block text-sm font-medium text-gray-700">Imagem de Perfil</label>
+                    <input type="file" name="image" id="image"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+
                 <div class="grid md:grid-cols-2 gap-4 mb-6">
                     <div>
                         <label class="block text-sm font-medium mb-1">Nome</label>
-                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="Auth::user()->name"
-                            required autofocus autocomplete="name" />
+                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
+                            :value="Auth::user()->name" required autofocus autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
                     <div>
