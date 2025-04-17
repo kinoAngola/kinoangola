@@ -5,21 +5,6 @@
     @vite(['resources/scss/companyProfile.scss', 'resources/js/companyProfile.js'])
 @endsection
 @section('content')
-    {{-- <div>
-    <h1>{{ Auth::user()->name }}</h1>
-    <a href="{{route('home')}}">Página Inicial</a>
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-
-        <x-dropdown-link :href="route('logout')"
-                onclick="event.preventDefault();
-                            this.closest('form').submit();">
-            {{ __('Log Out') }}
-        </x-dropdown-link>
-    </form>
-</div>
- --}}
-
 
     <div class="perfil-business">
         <div class="profile-container">
@@ -235,7 +220,7 @@
             <section id="testimonials" class="section">
                 <h2>Testemunhos</h2>
 
-                <div class="swiper mySwiper2">
+                <div class="swiper testmonials">
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">

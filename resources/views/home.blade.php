@@ -57,7 +57,7 @@
                 <img src="{{ asset('assets/images/qd (14).png') }}" alt="">
                 <div class="desc">
                     <h3>Camarão Frito com Molho Soquês</h3>
-                    <p>Desfrute deste prato incrivelmente saboroso na <a href="#"><strong>Dombaxi
+                    <p>Desfrute deste prato incrivelmente saboroso na <a href="{{route('companyProfile')}}"><strong>Dombaxi
                                 Delicious</strong></a>. Um prato digno de 5 estrelas de acordo La Kran Fêrger. O prato
                         tem
                         monopolizado a escolha nos almoços do povo luandanse, por sua

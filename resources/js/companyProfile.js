@@ -33,7 +33,7 @@ function changeProfilePhoto(event) {
 
 
 
-var swiper2 = new Swiper(".mySwiper2", {
+var swiper2 = new Swiper(".testmonials", {
     grabCursor: true,
     loop: true,
     autoplay: {

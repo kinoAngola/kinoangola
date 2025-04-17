@@ -12,16 +12,256 @@
 @import 'partials/essencial';
 @import 'partials/header';
 
-section{
-    .info-profile{
+section {
+    .info-profile {
+        @apply bg-white;
         padding: 2rem;
 
-        img{
+        img {
             @apply border;
             width: 100px;
             height: 100px;
         }
     }
 }
+
+
+.pratos-section {
+    @apply p-6;
+
+    h2 {
+        @apply text-2xl font-bold mb-4;
+    }
+
+    .content {
+        @apply grid md:grid-cols-3 gap-4 justify-items-center;
+
+        .card {
+            @apply border p-4 bg-white rounded shadow flex gap-2;
+            max-width: 700px;
+
+            img {
+                @apply w-44 h-44;
+            }
+
+            .info {
+                @apply flex flex-col justify-between w-full;
+
+                p {
+                    @apply text-sm text-gray-600;
+
+                    a {
+                        @apply text-orange-600 font-semibold hover:underline;
+                    }
+                }
+
+                button {
+                    @apply justify-self-end self-end text-orange-600 hover:underline;
+                }
+            }
+        }
+    }
+    
+    .more {
+        @apply text-orange-600 mt-3 transition-all duration-500 text-sm underline hover:text-orange-700;
+    }
+}
+
+.pedidos-section {
+    @apply p-6;
+
+    h2{
+        @apply text-2xl font-bold mb-4;
+    }
+
+    .content{
+        @apply flex flex-col gap-3;
+
+        .card{
+            @apply border bg-white p-4 rounded shadow;
+
+            .info{
+                @apply flex justify-between;
+
+                .desc,.actions{
+                    @apply flex gap-2;
+                }
+
+                .desc{
+                    img{
+                        @apply w-28 h-28;
+
+                    }
+
+                    .details{
+                        .title-company{
+                            @apply text-sm text-gray-600;
+
+                            a{
+                                @apply text-orange-600 font-semibold hover:underline;
+                            }
+                        }
+
+                        .status{
+                            @apply text-sm text-gray-600 mt-2;
+
+                            .bugde{
+                                @apply py-1 rounded-full text-sm font-semibold;
+                            }
+
+                            .confirmed{
+                                @apply text-green-600 px-2 bg-green-100;
+                            }
+                            .pendent{
+                                @apply text-yellow-600 px-2 bg-yellow-100;
+                            }
+                            .canceled{
+                                @apply text-red-600 px-2 bg-red-100;
+                            }
+                        }
+                    }
+                }
+
+                .actions{
+                    @apply self-start;
+                }
+            }
+        }
+    }
+
+    .more {
+        @apply text-orange-600 transition-all duration-500 text-sm underline hover:text-orange-700;
+    }
+}
+
+.recomendacoes-section {
+    @apply bg-white px-6 py-8;
+
+    h2 {
+        @apply text-2xl font-bold mb-4;
+    }
+
+    .content {
+        @apply grid md:grid-cols-3 gap-4;
+
+        .card {
+            @apply border p-4 rounded-md bg-orange-100 text-orange-600;
+
+            &:hover h3 {
+                @apply underline;
+            }
+
+            h3 {
+                @apply font-semibold justify-self-start hover:underline;
+            }
+
+            p {
+                @apply text-sm justify-self-start text-gray-500;
+            }
+        }
+    }
+}
+
+.avaliacoes-section {
+    @apply p-6;
+
+    h2 {
+        @apply text-2xl font-bold mb-6;
+    }
+
+    .content {
+        @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+
+        .card {
+            @apply border bg-white p-4 rounded-lg shadow-lg flex flex-col gap-2 justify-between;
+            min-height: 200px;
+
+            .company-info {
+                @apply text-left flex items-center gap-2;
+
+                img {
+                    @apply w-16 h-16 rounded-full;
+                }
+
+                .title {
+                    @apply font-semibold text-lg;
+                }
+
+                .email {
+                    @apply text-sm text-gray-600;
+                }
+            }
+
+            .avaliacao {
+
+                .comment {
+                    @apply text-sm text-gray-800;
+                }
+
+                .stars {
+                    @apply flex mt-2;
+
+                    i {
+                        @apply text-yellow-500;
+                    }
+                }
+
+            }
+
+            .prato {
+                @apply self-start justify-self-end;
+            }
+        }
+    }
+    
+    .more {
+        @apply text-orange-600 mt-3 transition-all duration-500 text-sm underline hover:text-orange-700;
+    }
+}
+
+
+.cta {
+    @apply bg-white flex justify-center mt-16;
+    padding-inline: 0;
+    padding-bottom: 0;
+    .container {
+        
+        @apply w-full text-center text-gray-900 sm:p-8;
+
+        h5 {
+            @apply mb-2 text-3xl font-bold text-gray-900;
+        }
+
+        .text-above {
+            @apply mb-5 text-base text-gray-500 sm:text-lg;
+        }
+
+        .cta-item {
+            @apply items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse;
+
+            .cta-link {
+                @apply w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5;
+
+                .icon {
+                    @apply me-3 w-7 h-7;
+                }
+
+                .content {
+                    @apply text-left rtl:text-right;
+
+                    .cta-app {
+                        @apply -mt-1 font-sans text-sm font-semibold text-white;
+                    }
+                }
+            }
+        }
+    }
+
+    #baixar-app{
+        padding: 4rem;
+    }
+}
+
+
 @import 'partials/respoCustomer';
 @import 'partials/footer';

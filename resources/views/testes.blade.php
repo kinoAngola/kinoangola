@@ -31,6 +31,90 @@
 </section>
 
 
+
+<section class="max-w-5xl mx-auto p-6">
+    <div class="bg-white shadow-xl rounded-2xl p-6 mb-10">
+        <h2 class="text-2xl font-bold mb-4">Perfil do Usuário</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-sm font-medium mb-1">Nome</label>
+                <input type="text" value="João Silva" class="w-full border rounded px-3 py-2">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1">Email</label>
+                <input type="email" value="joao@email.com" class="w-full border rounded px-3 py-2">
+            </div>
+        </div>
+        <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Salvar Alterações</button>
+    </div>
+
+
+
+
+    <div class="bg-white shadow-xl rounded-2xl p-6 mb-10">
+        <h2 class="text-2xl font-bold mb-4">Histórico</h2>
+        <ul>
+            <li class="flex justify-between items-center border-b py-2">
+                <span>Prato: Calulu</span>
+                <span>AOA 5.000</span>
+            </li>
+            <li class="flex justify-between items-center border-b py-2">
+                <span>Prato: Moamba de Galinha</span>
+                <span>AOA 4.500</span>
+            </li>
+        </ul>
+        <div class="flex justify-between mt-4 font-bold">
+            <span>Total</span>
+            <span>AOA 9.500</span>
+        </div>
+        <a href="#checkout"
+            class="block text-center mt-4 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Ir para o
+            Checkout</a>
+    </div>
+
+
+    <div id="checkout" class="bg-white shadow-xl rounded-2xl p-6 mb-10">
+        <h2 class="text-2xl font-bold mb-4">Finalizar Pedido</h2>
+        <form class="grid md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Nome Completo" class="border rounded px-3 py-2">
+            <input type="text" placeholder="Endereço de Entrega" class="border rounded px-3 py-2">
+            <input type="tel" placeholder="Telefone" class="border rounded px-3 py-2">
+            <select class="border rounded px-3 py-2">
+                <option>Método de Pagamento</option>
+                <option>Multicaixa</option>
+                <option>Transferência</option>
+                <option>Dinheiro na Entrega</option>
+            </select>
+            <textarea placeholder="Observações" class="md:col-span-2 border rounded px-3 py-2"></textarea>
+        </form>
+        <button class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Confirmar Pedido</button>
+    </div>
+
+
+    <div class="bg-white shadow-xl rounded-2xl p-6 mb-10">
+        <div class="md:flex gap-6">
+            <img src="/imagens/calulu.jpg" alt="Calulu de peixe" class="rounded-2xl w-full md:w-1/2">
+            <div class="flex-1">
+                <h2 class="text-3xl font-bold mb-2">Calulu de Peixe</h2>
+                <p class="text-gray-600 mb-2">Prato tradicional angolano com peixe seco, quiabo e óleo de palma.</p>
+                <p class="text-lg font-bold text-purple-600 mb-4">AOA 5.000</p>
+                <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Adicionar ao
+                    Carrinho</button>
+                <div class="mt-6">
+                    <h3 class="font-semibold mb-2">Detalhes do Prato</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700">
+                        <li>Serve: 1 pessoa</li>
+                        <li>Tempo estimado: 30-40 minutos</li>
+                        <li>Contém: peixe seco, quiabo, cebola, óleo de palma</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 @endsection
 
 

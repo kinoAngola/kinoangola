@@ -1,0 +1,85 @@
+@media (max-width:1300px) {
+    .pratos-section{
+        .content{
+            @apply grid-cols-2;
+        }
+    }
+}
+
+@media (max-width:930px) {
+    .pratos-section{
+        .content{
+            @apply grid-cols-1;
+        }
+    }
+}
+
+@media (max-width:650px) {
+ 
+    .pedidos-section{
+        .content{
+            @apply grid grid-cols-2;
+            .card{
+                .info{
+                    @apply flex-col;
+
+                    .desc{
+                        @apply flex-col w-full;
+                        min-height: 400px;
+
+                        img{
+                            @apply w-full h-full;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:580px) {
+    .pedidos-section{
+        .content{
+            @apply grid grid-cols-1 justify-items-center;
+            .card{
+                max-width: 330px;
+
+                .info{
+                    .desc{
+                        min-height: 380px;
+                    }
+                    .actions{
+                        @apply mt-6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:480px) {
+    .pratos-section{
+        .content{
+            .card{
+                @apply flex-col;
+
+                img{
+                    @apply w-full h-full;
+                }
+            }
+        }
+    }
+
+    
+    .cta {
+        padding-inline: 0;
+
+        #baixar-app,
+        .container {
+            padding: 1rem;
+        }
+    }
+}
+
+@media (max-width:360px) {
+}
